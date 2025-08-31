@@ -32,3 +32,12 @@ export interface Profile {
   description: string;
   image: string;
 }
+
+export interface Recommendation {
+  name: string;
+  title: string;
+  relation: string;
+  text: string;
+  image: string;
+  date: YearMonth;
+}
