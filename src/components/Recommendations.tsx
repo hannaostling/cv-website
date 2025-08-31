@@ -10,7 +10,7 @@ export function Recommendations({ recommendations }: Props) {
   const isEnglish = usePathname().startsWith("/en");
 
   return (
-    <section className="recommendations-section">
+    <section className="recommendations-section no-print">
       <div className="common-padding">
         <h2>{isEnglish ? "Recommendations" : "Rekommendationer"}</h2>
 

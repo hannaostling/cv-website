@@ -15,7 +15,7 @@ export function ExportButton() {
         onClick={() => window.print()}
       >
         <ExportIcon />
-        {isEnglish ? "Export as PDF" : "Exportera som PDF"}
+        {isEnglish ? "Export CV" : "Exportera CV"}
       </button>
     </div>
   );
