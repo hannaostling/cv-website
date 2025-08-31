@@ -9,5 +9,5 @@ export const profile: Profile = {
   linkedin: "https://linkedin.com/in/example",
   description:
     "Jag är en erfaren apputvecklare med stark bakgrund inom iOS och Android. Jag bygger skalbara appar med fokus på prestanda, användbarhet och långsiktig underhållbarhet.",
-  image: "/hanna-transparent.png",
+  image: "/people/hanna.png",
 };
