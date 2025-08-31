@@ -2,6 +2,10 @@
 export type YearMonth =
   `${number}${number}${number}${number}-${number}${number}`;
 
+// YYYY-MM-DD
+export type YearMonthDay =
+  `${number}${number}${number}${number}-${number}${number}-${number}${number}`;
+
 export interface EducationItem {
   title: string;
   school: string;
@@ -39,5 +43,5 @@ export interface Recommendation {
   relation: string;
   text: string;
   image: string;
-  date: YearMonth;
+  date: YearMonthDay;
 }

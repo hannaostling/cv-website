@@ -12,7 +12,7 @@ export function Experience({ experience }: Props) {
   const isEnglish = usePathname().startsWith("/en");
 
   return (
-    <section>
+    <section className="common-padding">
       <h2>{isEnglish ? "Work Experience" : "Arbetslivserfarenhet"}</h2>
       {experience.map((job, index) => {
         return (

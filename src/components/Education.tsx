@@ -11,7 +11,7 @@ type Props = {
 export function Education({ education }: Props) {
   const isEnglish = usePathname().startsWith("/en");
   return (
-    <section>
+    <section className="common-padding">
       <h2>{isEnglish ? "Education" : "Utbildning"}</h2>
       {education.map((edu, index) => {
         return (

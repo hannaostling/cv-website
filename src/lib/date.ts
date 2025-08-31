@@ -1,4 +1,4 @@
-import type { YearMonth } from "@/data/schema";
+import type { YearMonth, YearMonthDay } from "@/data/schema";
 
 export function formatDate(
   dateStr: YearMonth | null,
@@ -38,4 +38,17 @@ export function calculateDuration(
     remainingMonths > 0 ? `${remainingMonths} ${isEnglish ? "mo" : "mån"}` : "";
 
   return [yearStr, monthStr].filter(Boolean).join(" ");
+}
+
+export function formatYearMonthDay(
+  ymd: YearMonthDay,
+  isEnglish: boolean
+): string {
+  const [y, m, d] = ymd.split("-").map(Number);
+  const date = new Date(y, m - 1, d);
+  return date.toLocaleString(isEnglish ? "en-GB" : "sv-SE", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
 }
