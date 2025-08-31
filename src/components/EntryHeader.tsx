@@ -1,12 +1,13 @@
 "use client";
 
 import { formatDate, calculateDuration } from "@/lib/date";
+import type { YearMonth } from "@/data/schema";
 
 type Props = {
   title: string;
   image: string;
-  timeStart: string;
-  timeEnd: string | null;
+  timeStart: YearMonth;
+  timeEnd: YearMonth | null;
   isEnglish: boolean;
   showDuration?: boolean;
 };

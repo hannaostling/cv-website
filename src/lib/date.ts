@@ -1,4 +1,9 @@
-export function formatDate(dateStr: string | null, isEnglish: boolean): string {
+import type { YearMonth } from "@/data/schema";
+
+export function formatDate(
+  dateStr: YearMonth | null,
+  isEnglish: boolean
+): string {
   if (!dateStr) return isEnglish ? "Present" : "Nu";
 
   const [year, month] = dateStr.split("-");
@@ -11,8 +16,8 @@ export function formatDate(dateStr: string | null, isEnglish: boolean): string {
 }
 
 export function calculateDuration(
-  start: string,
-  end: string | null,
+  start: YearMonth,
+  end: YearMonth | null,
   isEnglish: boolean
 ): string {
   const startDate = new Date(start + "-01");
