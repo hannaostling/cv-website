@@ -2,17 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { EntryHeader } from "@/components/EntryHeader";
-import type { YearMonth } from "@/data/schema";
-
-type Job = {
-  title: string;
-  company: string;
-  timeStart: YearMonth;
-  timeEnd: YearMonth | null;
-  location: string;
-  details: string[];
-  image: string;
-};
+import type { Job } from "@/data/schema";
 
 type Props = {
   experience: Job[];

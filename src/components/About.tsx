@@ -1,17 +1,10 @@
 "use client";
 
 import { ExportButton } from "@/components/ExportButton";
+import type { Profile } from "@/data/schema";
 
 type Props = {
-  profile: {
-    name: string;
-    title: string;
-    email: string;
-    location: string;
-    linkedin: string;
-    description: string;
-    image: string;
-  };
+  profile: Profile;
 };
 
 export function About({ profile }: Props) {

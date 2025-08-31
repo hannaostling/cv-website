@@ -2,16 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { EntryHeader } from "@/components/EntryHeader";
-
-type EducationItem = {
-  title: string;
-  school: string;
-  timeStart: string;
-  timeEnd: string | null;
-  location: string;
-  description: string;
-  image: string;
-};
+import type { EducationItem } from "@/data/schema";
 
 type Props = {
   education: EducationItem[];
