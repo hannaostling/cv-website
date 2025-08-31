@@ -40,6 +40,7 @@
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--text-primary);
   font-family: "Avenir Next", Arial, Helvetica, sans-serif;
@@ -326,6 +327,12 @@ a {
   font-size: 0.9rem;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.read-more-btn:focus-visible,
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 .recommendations-grid {

@@ -34,12 +34,16 @@ export function RecommendationItem({
   return (
     <article>
       <div className="rec-header">
-        <img src={rec.image} alt="" className="rec-image" />
+        <img src={rec.image} alt="" aria-hidden="true" className="rec-image" />
         <div>
           <h3 className="rec-name">{rec.name}</h3>
           <p className="rec-title">{rec.title}</p>
           <p className="rec-meta">
-            {formatYearMonthDay(rec.date, isEnglish)} - {rec.relation}
+            <time dateTime={rec.date}>
+              {formatYearMonthDay(rec.date, isEnglish)}
+            </time>
+            {" - "}
+            {rec.relation}
           </p>
         </div>
       </div>

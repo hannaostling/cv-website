@@ -31,7 +31,7 @@ export function EntryHeader({
   return (
     <div>
       <div className="entry-row">
-        <img src={image} alt="" role="presentation" className="entry-img" />
+        <img src={image} alt="" aria-hidden="true" className="entry-img" />
         <h3>{title}</h3>
       </div>
       <p className="entry-dates">{dateStr + duration}</p>

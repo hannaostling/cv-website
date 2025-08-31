@@ -23,7 +23,14 @@ export function About({ profile }: Props) {
             <p>{profile.description}</p>
             <p className="about-contact-row">
               <span>
-                🔗 <a href={profile.linkedin}>LinkedIn</a>
+                🔗{" "}
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
               </span>
               <span>
                 ✉️ <a href={`mailto:${profile.email}`}>{profile.email}</a>
