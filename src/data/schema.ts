@@ -26,6 +26,7 @@ export interface Profile {
   name: string;
   title: string;
   email: string;
+  phone: string;
   location: string;
   linkedin: string;
   description: string;

@@ -1,4 +1,6 @@
-export const profile = {
+import type { Profile } from "@/data/schema";
+
+export const profile: Profile = {
   name: "Hanna Östling",
   title: "Apputvecklare",
   email: "hanna@example.se",

@@ -1,4 +1,6 @@
-export const education = [
+import type { EducationItem } from "@/data/schema";
+
+export const education: EducationItem[] = [
   {
     title: "Higher Vocational Diploma in Application Development",
     school: "IT-Högskolan",

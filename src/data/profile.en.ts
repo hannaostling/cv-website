@@ -1,8 +1,10 @@
-export const profile = {
+import type { Profile } from "@/data/schema";
+
+export const profile: Profile = {
   name: "Hanna Östling",
   title: "App Developer",
   email: "hanna@example.se",
-  phone: "+46 700-00 00 00",
+  phone: "0700-00 00 00",
   location: "Mölndal",
   linkedin: "https://linkedin.com/in/example",
   description:

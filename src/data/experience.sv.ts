@@ -1,4 +1,6 @@
-export const experience = [
+import type { Job } from "@/data/schema";
+
+export const experience: Job[] = [
   {
     title: "Apputvecklare",
     company: "Östling IT",
