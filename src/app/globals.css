@@ -1,0 +1,328 @@
+@import "tailwindcss";
+
+/* Light mode ☀️ */
+:root {
+  --background: #fff6f0;
+  --text-primary: #101010;
+  --text-secondary: #3e3e3e;
+  --link: #7b2f07;
+  --test: #ca17cd;
+  --about-background: #101014;
+  --about-text: #ffffff;
+  --about-button-background: #28272c;
+}
+
+/* Dark mode 🌛 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #101014;
+    --text-primary: #f0f0f0;
+    --text-secondary: #c8c6c6;
+    --link: #e08858;
+    --test: #ca17cd;
+    --about-background: #e6ddd7;
+    --about-text: #101014;
+    --about-button-background: #f7f5f3;
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-link: var(--link);
+  --color-test: var(--test);
+  --color-about-background: var(--about-background);
+  --color-about-text: var(--about-text);
+}
+
+main {
+  padding: 2rem 2.5rem;
+  max-width: 64rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+}
+
+section {
+  margin-bottom: 4em;
+}
+
+header {
+  margin-bottom: 3rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: inherit;
+}
+
+p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 2.75rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 2rem;
+  margin-bottom: 1.5%;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1.8rem;
+}
+
+h4 {
+  font-size: 1.12rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  font-size: 0.875rem;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+nav {
+  font-size: 0.875rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+nav a {
+  margin-left: 0.75rem;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+nav a:first-child {
+  margin-left: 0;
+}
+
+nav a.active {
+  font-weight: bold;
+}
+
+li {
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-link);
+}
+
+/* About */
+
+.about-wrapper {
+  padding-inline: 2.5rem;
+  background-color: var(--about-background);
+}
+
+.about-section {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.about-text {
+  color: var(--about-text);
+  flex: 1;
+  min-width: 250px;
+  margin-top: 6rem;
+}
+
+.about-text a {
+  color: var(--about-text);
+}
+
+.profile-img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-contact-row {
+  display: inline-flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.about-button-wrapper {
+  margin-bottom: 1rem;
+}
+
+.about-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--about-button-background);
+  color: var(--about-text);
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+/* Language Switcher */
+
+.language-switcher-text {
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.language-switcher-text a {
+  color: var(--about-text);
+}
+
+/* 🔁 Responsive tweaks for smaller screens */
+@media (max-width: 840px) {
+  .profile-img {
+    display: none;
+  }
+
+  .about-text {
+    margin-bottom: 2rem;
+  }
+
+  .about-contact-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  /* Export button is hidden on mobile devices since it's rarely used there,
+   and mobile browsers often ignore print styling, leading to layout issues */
+  .about-button-wrapper {
+    display: none !important;
+  }
+
+  .language-switcher-text {
+    margin-right: 0.5rem;
+  }
+}
+
+/* Experience and Education entry */
+
+.entry-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.entry-row h3 {
+  margin: 0;
+}
+
+.entry-dates {
+  margin-bottom: 0.2rem;
+}
+
+.entry-location {
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  color: var(--text-secondary);
+}
+
+.entry-img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+/* PDF styling */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page {
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 100%;
+  }
+
+  main {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  header {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5%;
+  }
+
+  h3 {
+    font-size: 0.9rem;
+    margin-top: 0rem;
+  }
+
+  p {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    font-size: 0.7rem;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .about-wrapper {
+    width: 100%;
+  }
+
+  .about-text {
+    margin-top: 1.5rem;
+  }
+
+  .entry-row {
+    margin-top: 1rem;
+  }
+}
