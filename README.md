@@ -12,6 +12,7 @@ This is a personal CV website built with [Next.js](https://nextjs.org/) and [Typ
 - 🖨️ PDF export with custom `@media print` styling
 - 📅 Smart date formatting with helper function (e.g. “Present” for ongoing positions)
 - ✍️ Recommendation section with expandable text (excluded from PDF export)
+- 💡 Dedicated **Skills** section highlighting both technical and personal strengths
 
 ## 🚀 Tech Stack
 
