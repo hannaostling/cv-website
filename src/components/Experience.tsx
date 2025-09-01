@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { EntryHeader } from "@/components/EntryHeader";
 import type { Job } from "@/data/schema";
+import { formatDate, calculateDuration } from "@/lib/date";
 
 type Props = {
   experience: Job[];
@@ -15,17 +16,24 @@ export function Experience({ experience }: Props) {
     <section className="common-padding">
       <h2>{isEnglish ? "Work Experience" : "Arbetslivserfarenhet"}</h2>
       {experience.map((job, index) => {
+        const dateStr = `${formatDate(job.timeStart, isEnglish)} – ${formatDate(
+          job.timeEnd,
+          isEnglish
+        )}`;
+        const duration = ` · ${calculateDuration(
+          job.timeStart,
+          job.timeEnd,
+          isEnglish
+        )}`;
+
         return (
           <div key={index}>
             <EntryHeader
-              title={`${job.title}, ${job.company}`}
+              first={`${job.title}, ${job.company}`}
+              second={`${dateStr} ${duration}`}
+              third={`${job.location}`}
               image={job.image}
-              timeStart={job.timeStart}
-              timeEnd={job.timeEnd}
-              isEnglish={isEnglish}
-              showDuration={true}
             />
-            <p className="entry-location">{job.location}</p>
             <ul>
               {job.details.map((item, i) => (
                 <li key={i}>{item}</li>

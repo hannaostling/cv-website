@@ -3,8 +3,8 @@ import type { Skill } from "@/data/schema";
 export const skills: Skill[] = [
   {
     translated: {
-      sv: "Programmeringsspråk",
-      en: "Programming Languages",
+      sv: "💻 Programmeringsspråk",
+      en: "💻 Programming Languages",
     },
     values: [
       { translated: { universal: "Swift" }, level: "advanced" },
@@ -18,8 +18,8 @@ export const skills: Skill[] = [
   },
   {
     translated: {
-      sv: "Verktyg",
-      en: "Tools",
+      sv: "🛠️ Verktyg",
+      en: "🛠️ Tools",
     },
     values: [
       { translated: { universal: "iOS (Xcode)" } },
@@ -48,7 +48,7 @@ export const skills: Skill[] = [
     ],
   },
   {
-    translated: { sv: "Mjuka färdigheter", en: "Soft Skills" },
+    translated: { sv: "❤️ Mjuka färdigheter", en: "❤️ Soft Skills" },
     values: [
       { translated: { sv: "Noggrann", en: "Detail-oriented" } },
       { translated: { sv: "Driven", en: "Driven" } },
@@ -61,8 +61,8 @@ export const skills: Skill[] = [
   },
   {
     translated: {
-      sv: "Data & API:er",
-      en: "Data & APIs",
+      sv: "💾 Data & API:er",
+      en: "💾 Data & APIs",
     },
     values: [
       { translated: { universal: "REST" } },
@@ -75,8 +75,8 @@ export const skills: Skill[] = [
   },
   {
     translated: {
-      sv: "Arkitektur och designmönster",
-      en: "Architecture & Design Patterns",
+      sv: "🏗️ Arkitektur och designmönster",
+      en: "🏗️ Architecture & Design Patterns",
     },
     values: [
       { translated: { universal: "MVVM" } },
@@ -86,8 +86,8 @@ export const skills: Skill[] = [
   },
   {
     translated: {
-      sv: "Säkerhet och autentisering",
-      en: "Security & Authentication",
+      sv: "🔒 Säkerhet och autentisering",
+      en: "🔒 Security & Authentication",
     },
     values: [
       { translated: { universal: "BankID" } },
@@ -101,8 +101,8 @@ export const skills: Skill[] = [
   },
   {
     translated: {
-      sv: "iOS-utveckling",
-      en: "iOS Development",
+      sv: "🍏 iOS-utveckling",
+      en: "🍏 iOS Development",
     },
     values: [
       { translated: { universal: "UIKit" } },
@@ -122,8 +122,8 @@ export const skills: Skill[] = [
   },
   {
     translated: {
-      sv: "Android-utveckling",
-      en: "Android Development",
+      sv: "🤖 Android-utveckling",
+      en: "🤖 Android Development",
     },
     values: [
       { translated: { universal: "Gradle" } },

@@ -2,15 +2,10 @@
 
 /* Light mode ☀️ */
 :root {
-  --background: #fff6f0;
-  --background-secondary: #efe9e6;
+  --background: #fffcfa;
+  --background-secondary: #f5f1ef;
   --text-primary: #101010;
   --text-secondary: #3e3e3e;
-  --link: #7b2f07;
-  --test: #ca17cd;
-  --about-background: #101014;
-  --about-text: #ffffff;
-  --about-button-background: #28272c;
 }
 
 /* Dark mode 🌛 */
@@ -20,11 +15,6 @@
     --background-secondary: #151522;
     --text-primary: #f0f0f0;
     --text-secondary: #c8c6c6;
-    --link: #e08858;
-    --test: #ca17cd;
-    --about-background: #e6ddd7;
-    --about-text: #101014;
-    --about-button-background: #f7f5f3;
   }
 }
 
@@ -33,10 +23,6 @@
   --font-mono: var(--font-geist-mono);
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
-  --color-link: var(--link);
-  --color-test: var(--test);
-  --color-about-background: var(--about-background);
-  --color-about-text: var(--about-text);
 }
 
 body {
@@ -129,10 +115,6 @@ li {
   color: var(--color-text-secondary);
 }
 
-a {
-  color: var(--color-link);
-}
-
 /* Commonly occurring */
 
 .common-padding {
@@ -145,8 +127,8 @@ a {
 /* About */
 
 .about-wrapper {
-  padding-inline: 2.5rem;
-  background-color: var(--about-background);
+  padding-inline-end: 5rem;
+  background-color: var(--background-secondary);
 }
 
 .about-section {
@@ -154,19 +136,14 @@ a {
   align-items: flex-end;
   gap: 2rem;
   flex-wrap: nowrap;
-  max-width: 64rem;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
 }
 
 .about-text {
-  color: var(--about-text);
   flex: 1;
   min-width: 250px;
   margin-top: 6rem;
-}
-
-.about-text a {
-  color: var(--about-text);
 }
 
 .profile-img {
@@ -189,8 +166,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--about-button-background);
-  color: var(--about-text);
+  background-color: var(--background);
   border-radius: 9999px;
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
@@ -206,12 +182,12 @@ a {
   margin-right: 1rem;
 }
 
-.language-switcher-text a {
-  color: var(--about-text);
-}
-
 /* 🔁 Responsive tweaks for smaller screens */
 @media (max-width: 840px) {
+  .common-padding {
+    padding: 1rem 2rem;
+  }
+
   .profile-img {
     display: none;
   }
@@ -224,6 +200,10 @@ a {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.2rem;
+  }
+
+  .about-wrapper {
+    padding-inline: 3rem;
   }
 
   /* Export button is hidden on mobile devices since it's rarely used there,
@@ -241,7 +221,7 @@ a {
 
 .entry-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.8rem;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
@@ -251,20 +231,21 @@ a {
   margin: 0;
 }
 
-.entry-dates {
+.entry-second {
   margin-bottom: 0.2rem;
 }
 
-.entry-location {
+.entry-third {
   font-size: 0.8rem;
   margin-bottom: 0.2rem;
   color: var(--text-secondary);
 }
 
 .entry-img {
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
+  margin-top: 8px;
 }
 
 /* Recommendations */
@@ -283,8 +264,8 @@ a {
 }
 
 .rec-image {
-  width: 55px;
-  height: 55px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   margin-top: 5px;
 }
@@ -418,6 +399,12 @@ a:focus-visible {
 
   .entry-row {
     margin-top: 1rem;
+  }
+
+  .entry-img {
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
   }
 
   .skills-grid {
