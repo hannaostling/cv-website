@@ -48,6 +48,32 @@ export const skills: Skill[] = [
     ],
   },
   {
+    translated: { sv: "Mjuka färdigheter", en: "Soft Skills" },
+    values: [
+      { translated: { sv: "Noggrann", en: "Detail-oriented" } },
+      { translated: { sv: "Driven", en: "Driven" } },
+      { translated: { sv: "Engagerad", en: "Committed" } },
+      { translated: { sv: "Samarbetsförmåga", en: "Collaboration" } },
+      { translated: { sv: "Anpassningsförmåga", en: "Adaptability" } },
+      { translated: { sv: "Kommunikativ", en: "Communication" } },
+      { translated: { sv: "Problemlösning", en: "Problem Solving" } },
+    ],
+  },
+  {
+    translated: {
+      sv: "Data & API:er",
+      en: "Data & APIs",
+    },
+    values: [
+      { translated: { universal: "REST" } },
+      { translated: { universal: "JSON" } },
+      { translated: { universal: "GraphQL" } },
+      { translated: { universal: "SQL" } },
+      { translated: { universal: "Firebase Realtime Database" } },
+      { translated: { universal: "Firebase Cloud Firestore" } },
+    ],
+  },
+  {
     translated: {
       sv: "Arkitektur och designmönster",
       en: "Architecture & Design Patterns",
@@ -105,32 +131,6 @@ export const skills: Skill[] = [
       { translated: { universal: "AppCompat" } },
       { translated: { universal: "Material Components" } },
       { translated: { universal: "Gson" } },
-    ],
-  },
-  {
-    translated: {
-      sv: "Data & API:er",
-      en: "Data & APIs",
-    },
-    values: [
-      { translated: { universal: "REST" } },
-      { translated: { universal: "JSON" } },
-      { translated: { universal: "GraphQL" } },
-      { translated: { universal: "SQL" } },
-      { translated: { universal: "Firebase Realtime Database" } },
-      { translated: { universal: "Firebase Cloud Firestore" } },
-    ],
-  },
-  {
-    translated: { sv: "Mjuka färdigheter", en: "Soft Skills" },
-    values: [
-      { translated: { sv: "Noggrann", en: "Detail-oriented" } },
-      { translated: { sv: "Driven", en: "Driven" } },
-      { translated: { sv: "Engagerad", en: "Committed" } },
-      { translated: { sv: "Samarbetsförmåga", en: "Collaboration" } },
-      { translated: { sv: "Anpassningsförmåga", en: "Adaptability" } },
-      { translated: { sv: "Kommunikativ", en: "Communication" } },
-      { translated: { sv: "Problemlösning", en: "Problem Solving" } },
     ],
   },
 ];

@@ -3,7 +3,7 @@
 /* Light mode ☀️ */
 :root {
   --background: #fff6f0;
-  --background-secondary: #d6f1f9;
+  --background-secondary: #efe9e6;
   --text-primary: #101010;
   --text-secondary: #3e3e3e;
   --link: #7b2f07;
@@ -17,7 +17,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #101014;
-    --background-secondary: #0a152d;
+    --background-secondary: #151522;
     --text-primary: #f0f0f0;
     --text-secondary: #c8c6c6;
     --link: #e08858;
@@ -342,6 +342,20 @@ a:focus-visible {
   column-gap: 3rem;
 }
 
+/* Skills */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+  line-height: 1.6;
+}
+
+.skills-grid ul {
+  margin-top: 0.5rem;
+}
+
 /* PDF styling */
 @media print {
   * {
@@ -404,5 +418,11 @@ a:focus-visible {
 
   .entry-row {
     margin-top: 1rem;
+  }
+
+  .skills-grid {
+    gap: 1rem;
+    margin-top: 1rem;
+    line-height: 1.4;
   }
 }
