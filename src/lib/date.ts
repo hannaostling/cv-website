@@ -23,7 +23,7 @@ export function calculateDuration(
   const startDate = new Date(start + "-01");
   const endDate = end ? new Date(end + "-01") : new Date();
 
-  let months =
+  const months =
     (endDate.getFullYear() - startDate.getFullYear()) * 12 +
     (endDate.getMonth() - startDate.getMonth());
 
