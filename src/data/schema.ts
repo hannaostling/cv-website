@@ -45,3 +45,26 @@ export interface Recommendation {
   image: string;
   date: YearMonthDay;
 }
+
+export type SkillLevel =
+  | "beginner"
+  | "basic"
+  | "intermediate"
+  | "proficient"
+  | "advanced";
+
+export interface Skill {
+  translated: Translated;
+  values: SkillValue[];
+}
+
+export interface SkillValue {
+  translated: Translated;
+  level?: SkillLevel;
+}
+
+export interface Translated {
+  universal?: string;
+  sv?: string;
+  en?: string;
+}
