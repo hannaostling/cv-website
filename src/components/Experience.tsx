@@ -13,8 +13,14 @@ export function Experience({ experience }: Props) {
   const isEnglish = usePathname().startsWith("/en");
 
   return (
-    <section className="common-padding">
-      <h2>{isEnglish ? "Work Experience" : "Arbetslivserfarenhet"}</h2>
+    <section
+      id="experience"
+      aria-labelledby="experience-heading"
+      className="common-padding"
+    >
+      <h2 id="experience-heading">
+        {isEnglish ? "Work Experience" : "Arbetslivserfarenhet"}
+      </h2>
       {experience.map((job, index) => {
         const dateStr = `${formatDate(job.timeStart, isEnglish)} – ${formatDate(
           job.timeEnd,

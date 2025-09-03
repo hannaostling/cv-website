@@ -12,8 +12,12 @@ type Props = {
 export function Education({ education }: Props) {
   const isEnglish = usePathname().startsWith("/en");
   return (
-    <section className="common-padding">
-      <h2>{isEnglish ? "Education" : "Utbildning"}</h2>
+    <section
+      id="education"
+      aria-labelledby="education-heading"
+      className="common-padding"
+    >
+      <h2 id="education-heading">{isEnglish ? "Education" : "Utbildning"}</h2>
       {education.map((edu, index) => {
         const dateStr = `${formatDate(edu.timeStart, isEnglish)} – ${formatDate(
           edu.timeEnd,

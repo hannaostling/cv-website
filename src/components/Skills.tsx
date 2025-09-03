@@ -11,9 +11,9 @@ export function Skills({ skills }: Props) {
   const isEnglish = usePathname().startsWith("/en");
 
   return (
-    <section>
+    <section id="skills" aria-labelledby="skills-heading">
       <div className="common-padding">
-        <h2>{isEnglish ? "Skills" : "Kompetenser"}</h2>
+        <h2 id="skills-heading">{isEnglish ? "Skills" : "Kompetenser"}</h2>
 
         <div className="skills-grid">
           {skills.map((skill, i) => (

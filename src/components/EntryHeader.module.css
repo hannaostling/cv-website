@@ -1,0 +1,43 @@
+/* Entry CSS */
+
+.entryRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.entryRow h3 {
+  margin: 0;
+}
+
+.entrySecond {
+  margin-bottom: 0.2rem;
+}
+
+.entryThird {
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  color: var(--text-secondary);
+}
+
+.entryImg {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-top: 8px;
+}
+
+/* PDF styling */
+@media print {
+  .entryRow {
+    margin-top: 1rem;
+  }
+
+  .entryImg {
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
+  }
+}

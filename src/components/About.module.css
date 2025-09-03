@@ -1,0 +1,88 @@
+/* About CSS */
+
+.aboutWrapper {
+  padding-inline-end: 5rem;
+  background-color: var(--background-secondary);
+}
+
+.aboutSection {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  max-width: none;
+  margin: 0;
+}
+
+.aboutText {
+  flex: 1;
+  min-width: 250px;
+  margin-top: 6rem;
+}
+
+.profileImg {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+.aboutContactRow {
+  display: inline-flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.aboutButtonWrapper {
+  margin-bottom: 1rem;
+}
+
+.aboutBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--background);
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 840px) {
+  .profileImg {
+    display: none;
+  }
+
+  .aboutText {
+    margin-bottom: 2rem;
+  }
+
+  .aboutContactRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .aboutWrapper {
+    padding-inline: 3rem;
+  }
+
+  /* Export button is hidden on mobile devices since it's rarely used there,
+   and mobile browsers often ignore print styling, leading to layout issues */
+  .aboutButtonWrapper {
+    display: none !important;
+  }
+}
+
+/* PDF styling */
+@media print {
+  .aboutWrapper {
+    width: 100%;
+  }
+
+  .aboutText {
+    margin-top: 1.5rem;
+  }
+}

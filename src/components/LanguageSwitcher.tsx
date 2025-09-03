@@ -8,7 +8,7 @@ export function LanguageSwitcher() {
   const isEnglish = pathname.startsWith("/en");
 
   return (
-    <nav className="no-print language-switcher-text">
+    <nav className="no-print">
       <Link href="/" className={!isEnglish ? "active" : ""}>
         🇸🇪 Svenska
       </Link>

@@ -1,5 +1,7 @@
 "use client";
 
+import styles from "./EntryHeader.module.css";
+
 type Props = {
   first: string;
   second: string;
@@ -10,12 +12,17 @@ type Props = {
 export function EntryHeader({ first, second, third, image }: Props) {
   return (
     <div>
-      <div className="entry-row">
-        <img src={image} alt="" aria-hidden="true" className="entry-img" />
+      <div className={styles.entryRow}>
+        <img
+          src={image}
+          alt=""
+          aria-hidden="true"
+          className={styles.entryImg}
+        />
         <div>
           <h3>{first}</h3>
-          <p className="entry-second">{second}</p>
-          <p className="entry-third">{third}</p>
+          <p className={styles.entrySecond}>{second}</p>
+          <p className={styles.entryThird}>{third}</p>
         </div>
       </div>
     </div>

@@ -1,0 +1,74 @@
+/* Recommendations CSS */
+
+.recommendationsSection {
+  background: var(--background-secondary);
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.recommendationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  row-gap: 2rem;
+  column-gap: 3rem;
+}
+
+.recHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.recImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.recName {
+  margin: 0;
+}
+
+.recTitle {
+  margin: 0.1rem 0 0;
+}
+
+.recMeta {
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.recText {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.recTextClamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.readMoreBtn {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin-top: 0.25rem;
+  font: inherit;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.reaMoreBtn:focus-visible,
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}

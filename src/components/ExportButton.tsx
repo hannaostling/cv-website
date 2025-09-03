@@ -2,15 +2,16 @@
 
 import { usePathname } from "next/navigation";
 import { ExportIcon } from "@/components/ExportIcon";
+import styles from "./About.module.css";
 
 export function ExportButton() {
   const pathname = usePathname();
   const isEnglish = pathname.startsWith("/en");
 
   return (
-    <div className="about-button-wrapper">
+    <div className={styles.aboutButtonWrapper}>
       <button
-        className="about-button no-print"
+        className={`${styles.aboutBtn} no-print`}
         type="button"
         onClick={() => window.print()}
       >

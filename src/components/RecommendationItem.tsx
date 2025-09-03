@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { Recommendation } from "@/data/schema";
 import { formatYearMonthDay } from "@/lib/date";
+import styles from "./Recommendations.module.css";
 
 export function RecommendationItem({
   rec,
@@ -33,12 +34,17 @@ export function RecommendationItem({
 
   return (
     <article>
-      <div className="rec-header">
-        <img src={rec.image} alt="" aria-hidden="true" className="rec-image" />
+      <div className={styles.recHeader}>
+        <img
+          src={rec.image}
+          alt=""
+          aria-hidden="true"
+          className={styles.recImage}
+        />
         <div>
-          <h3 className="rec-name">{rec.name}</h3>
-          <p className="rec-title">{rec.title}</p>
-          <p className="rec-meta">
+          <h3 className={styles.recName}>{rec.name}</h3>
+          <p className={styles.recTitle}>{rec.title}</p>
+          <p className={styles.recMeta}>
             <time dateTime={rec.date}>
               {formatYearMonthDay(rec.date, isEnglish)}
             </time>
@@ -48,14 +54,17 @@ export function RecommendationItem({
         </div>
       </div>
 
-      <p ref={pRef} className={`rec-text ${isOpen ? "" : "rec-text-clamp"}`}>
+      <p
+        ref={pRef}
+        className={`${styles.recText} ${isOpen ? "" : styles.recTextClamp}`}
+      >
         {rec.text}
       </p>
 
       {isClamped && !isOpen && (
         <button
           type="button"
-          className="read-more-btn"
+          className={styles.readMoreBtn}
           onClick={() => setIsOpen(true)}
           aria-expanded={false}
         >
