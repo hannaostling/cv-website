@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import type { Recommendation } from "@/data/schema";
 import { formatYearMonthDay } from "@/lib/date";
 import styles from "./Recommendations.module.css";
+import { useClampDetection } from "@/hooks/useClampDetection";
 
 export function RecommendationItem({
   rec,
@@ -13,24 +14,8 @@ export function RecommendationItem({
   isEnglish: boolean;
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isClamped, setIsClamped] = useState(false);
   const pRef = useRef<HTMLParagraphElement>(null);
-
-  useEffect(() => {
-    if (!pRef.current || isOpen) return;
-    const el = pRef.current;
-
-    const check = () => {
-      const full = el.scrollHeight;
-      const visible = el.clientHeight;
-      setIsClamped(full > visible + 1);
-    };
-
-    check();
-    const ro = new ResizeObserver(check);
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, [isOpen, rec.text, isEnglish]);
+  const isClamped = useClampDetection(pRef, isOpen, [rec.text, isEnglish]);
 
   return (
     <article>

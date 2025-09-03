@@ -3,18 +3,22 @@
 /* Light mode ☀️ */
 :root {
   --background: #fffcfa;
+  --background-primary: #fffcfa;
   --background-secondary: #f5f1ef;
   --text-primary: #101010;
   --text-secondary: #3e3e3e;
+  --border: rgba(0, 0, 0, 0.06);
 }
 
 /* Dark mode 🌚 */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #101014;
+    --background-primary: #101014;
     --background-secondary: #151522;
     --text-primary: #f0f0f0;
     --text-secondary: #c8c6c6;
+    --border: rgba(255, 255, 255, 0.06);
   }
 }
 
@@ -80,13 +84,8 @@ ul {
 }
 
 nav a {
-  margin-left: 0.75rem;
   font-weight: normal;
   text-decoration: none;
-}
-
-nav a:first-child {
-  margin-left: 0;
 }
 
 nav a.active {
@@ -101,16 +100,8 @@ li {
 
 .common-padding {
   padding: 2rem 2.5rem;
-  max-width: 64rem;
   margin: 0 auto;
   position: relative;
-}
-
-/* Adjust for smaller screens */
-@media (max-width: 840px) {
-  .common-padding {
-    padding: 1rem 2rem;
-  }
 }
 
 /* Skills */
@@ -125,6 +116,23 @@ li {
 
 .skills-grid ul {
   margin-top: 0.5rem;
+}
+
+/* Language Switcher */
+
+.language-switcher {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 850px) {
+  .common-padding {
+    padding: 1rem 2rem;
+  }
 }
 
 /* PDF styling */
@@ -194,4 +202,8 @@ html {
 
 section {
   scroll-margin-top: 80px;
+  scroll-margin-top: var(--header-offset);
+}
+:root {
+  --header-offset: 80px;
 }

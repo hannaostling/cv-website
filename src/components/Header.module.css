@@ -1,0 +1,115 @@
+/* Header CSS */
+
+.header {
+  background-color: var(--background-secondary);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  min-height: 64px;
+  border-bottom: 2px solid var(--border);
+  backdrop-filter: saturate(140%) blur(6px);
+  padding-bottom: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.noBorder {
+  border-color: transparent;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  font-size: 0.8rem;
+  padding-right: 2rem;
+  padding-left: 3rem;
+  padding-top: 2rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+/* Inline menu */
+.navInline {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Icon + dropdown wrapper */
+.iconMode {
+  position: relative;
+}
+
+.navInline a[data-active="true"],
+.menuList a[data-active="true"] {
+  font-weight: 700;
+}
+
+/* Menu button */
+.menuToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: none;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  opacity: 0.85;
+}
+.menuToggle:hover,
+.menuToggle:focus-visible {
+  opacity: 1;
+  outline: 2px solid transparent;
+}
+
+/* Icons */
+.menuIcon,
+.chevron {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Drop-down main menu */
+.menuPanel {
+  position: absolute;
+  right: 0;
+  left: auto;
+  top: calc(100% + 0.5rem);
+  background: var(--background-secondary);
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  max-height: 0;
+  padding: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: max-height 0.2s ease, opacity 0.2s ease, padding 0.2s ease;
+}
+
+.openMenu {
+  max-height: 50vh;
+  padding: 0.5rem 0.75rem;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menuList {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.menuList a {
+  text-decoration: none;
+  opacity: 0.9;
+  padding: 0.4rem 0.25rem;
+  border-radius: 0.375rem;
+}
+
+.menuList a:hover,
+.menuList a:focus-visible {
+  outline: 2px solid transparent;
+  background: rgba(0, 0, 0, 0.04);
+}

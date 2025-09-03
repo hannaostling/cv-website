@@ -1,13 +1,15 @@
 /* About CSS */
 
-.aboutWrapper {
-  padding-inline-end: 5rem;
+.aboutSection {
+  padding-inline: 2.5rem;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
   background-color: var(--background-secondary);
 }
 
-.aboutSection {
+.aboutWrapper {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 2rem;
   flex-wrap: nowrap;
   max-width: none;
@@ -17,72 +19,60 @@
 .aboutText {
   flex: 1;
   min-width: 250px;
-  margin-top: 6rem;
 }
 
 .profileImg {
-  width: 300px;
+  width: clamp(170px, 25vw, 300px);
+  flex-shrink: 0;
+}
+
+.profileImg img {
+  width: 100%;
   height: auto;
   object-fit: cover;
 }
 
 .aboutContactRow {
   display: inline-flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 0.3rem;
+  flex-wrap: nowrap;
+  flex-direction: column;
 }
 
-.aboutButtonWrapper {
-  margin-bottom: 1rem;
-}
-
-.aboutBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: var(--background);
-  border-radius: 9999px;
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s ease-in-out;
+/* Adjust for very big screens */
+@media (min-width: 1200px) {
+  .aboutWrapper {
+    gap: 4rem;
+  }
 }
 
 /* Adjust for smaller screens */
-@media (max-width: 840px) {
-  .profileImg {
-    display: none;
-  }
-
-  .aboutText {
-    margin-bottom: 2rem;
-  }
-
+@media (max-width: 850px) {
   .aboutContactRow {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.2rem;
   }
 
-  .aboutWrapper {
-    padding-inline: 3rem;
+  .aboutSection {
+    padding-inline: 2rem;
   }
+}
 
-  /* Export button is hidden on mobile devices since it's rarely used there,
-   and mobile browsers often ignore print styling, leading to layout issues */
-  .aboutButtonWrapper {
-    display: none !important;
+/* Adjust 640px screen */
+@media (max-width: 640px) {
+  .profileImg {
+    display: none;
   }
 }
 
 /* PDF styling */
 @media print {
-  .aboutWrapper {
+  .aboutSection {
     width: 100%;
   }
 
   .aboutText {
-    margin-top: 1.5rem;
+    margin-top: 3rem;
   }
 }

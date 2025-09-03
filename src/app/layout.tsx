@@ -3,7 +3,8 @@
 import "./globals.css";
 import type { ReactNode } from "react";
 import { usePathname } from "next/navigation";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -11,12 +12,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang={lang}>
+      <head>
+        <link rel="icon" href="/icon.png" sizes="any" />
+      </head>
       <body>
-        <head>
-          <link rel="icon" href="/icon.png" sizes="any" />
-        </head>
-        <LanguageSwitcher />
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
