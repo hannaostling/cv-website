@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { EntryHeader } from "@/components/EntryHeader";
 import type { EducationItem } from "@/data/schema";
 import { formatDate } from "@/lib/date";
+import { Section } from "./Section";
 
 type Props = {
   education: EducationItem[];
@@ -12,11 +13,7 @@ type Props = {
 export function Education({ education }: Props) {
   const isEnglish = usePathname().startsWith("/en");
   return (
-    <section
-      id="education"
-      aria-labelledby="education-heading"
-      className="common-padding"
-    >
+    <Section type="primary" id="education" ariaHeading="education-heading">
       <h2 id="education-heading">{isEnglish ? "Education" : "Utbildning"}</h2>
       {education.map((edu, index) => {
         const dateStr = `${formatDate(edu.timeStart, isEnglish)} – ${formatDate(
@@ -35,6 +32,6 @@ export function Education({ education }: Props) {
           </div>
         );
       })}
-    </section>
+    </Section>
   );
 }

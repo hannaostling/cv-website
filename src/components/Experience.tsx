@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { EntryHeader } from "@/components/EntryHeader";
 import type { Job } from "@/data/schema";
 import { formatDate, calculateDuration } from "@/lib/date";
+import { Section } from "./Section";
 
 type Props = {
   experience: Job[];
@@ -13,11 +14,7 @@ export function Experience({ experience }: Props) {
   const isEnglish = usePathname().startsWith("/en");
 
   return (
-    <section
-      id="experience"
-      aria-labelledby="experience-heading"
-      className="common-padding"
-    >
+    <Section type="primary" id="experience" ariaHeading="experience-heading">
       <h2 id="experience-heading">
         {isEnglish ? "Work Experience" : "Arbetslivserfarenhet"}
       </h2>
@@ -48,6 +45,6 @@ export function Experience({ experience }: Props) {
           </div>
         );
       })}
-    </section>
+    </Section>
   );
 }

@@ -29,10 +29,6 @@ body {
   font-family: "Avenir Next", Arial, Helvetica, sans-serif;
 }
 
-section {
-  margin-bottom: 4em;
-}
-
 h1,
 h2,
 h3,
@@ -43,7 +39,6 @@ p {
 
 p {
   font-size: 0.9rem;
-  margin-bottom: 1rem;
   line-height: 1.6;
 }
 
@@ -58,7 +53,6 @@ h2 {
   font-size: 1.3rem;
   font-weight: 600;
   line-height: 2rem;
-  margin-bottom: 1.5%;
   text-transform: uppercase;
 }
 
@@ -66,15 +60,13 @@ h3 {
   font-size: 1.15rem;
   font-weight: 600;
   line-height: 1.75rem;
-  margin-bottom: 0.5rem;
-  margin-top: 1.8rem;
 }
 
 h4 {
   font-size: 1.12rem;
   font-weight: 500;
   line-height: 1.6;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 ul {
@@ -98,8 +90,29 @@ li {
 
 /* Commonly occurring */
 
+.section-primary {
+  --bleed-bg: var(--background-primary);
+  background: var(--bleed-bg);
+  box-shadow: 0 0 0 100vmax var(--bleed-bg);
+  clip-path: inset(0 -100vmax);
+}
+
+.section-secondary {
+  --bleed-bg: var(--background-secondary);
+  background: var(--bleed-bg);
+  box-shadow: 0 0 0 100vmax var(--bleed-bg);
+  clip-path: inset(0 -100vmax);
+}
+
+.section-primary,
+.section-secondary {
+  margin-top: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
 .common-padding {
-  padding: 2rem 2.5rem;
+  padding-block: 1.5rem;
+  padding-inline: 2.5rem;
   margin: 0 auto;
   position: relative;
 }
@@ -109,8 +122,8 @@ li {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 2rem;
   gap: 3rem;
-  margin-top: 3rem;
   line-height: 1.6;
 }
 
@@ -128,10 +141,28 @@ li {
   letter-spacing: 0.03em;
 }
 
+/* Adjust for very big screens */
+@media (min-width: 1200px) {
+  .common-padding {
+    padding-block: 2rem;
+    padding-inline: 3rem;
+  }
+
+  .section-primary,
+  .section-secondary {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+}
+
 /* Adjust for smaller screens */
 @media (max-width: 850px) {
   .common-padding {
-    padding: 1rem 2rem;
+    padding-inline: 2rem;
+  }
+
+  h1 {
+    margin-bottom: 0.8rem;
   }
 }
 
@@ -162,17 +193,14 @@ li {
 
   h2 {
     font-size: 1.1rem;
-    margin-bottom: 1.5%;
   }
 
   h3 {
     font-size: 0.9rem;
-    margin-top: 0rem;
   }
 
   p {
     font-size: 0.7rem;
-    margin-bottom: 0.5rem;
   }
 
   ul {

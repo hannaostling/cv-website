@@ -1,12 +1,14 @@
 /* Footer CSS */
 
 .footer {
-  background-color: var(--background-secondary);
+  margin-bottom: 0rem;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
 }
 
 .inner {
   margin-inline: auto;
-  padding: 1rem;
+  padding-inline: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
