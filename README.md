@@ -19,7 +19,6 @@ This is a personal CV website built with [Next.js](https://nextjs.org/) and [Typ
 
 - **Next.js App Router**
 - **TypeScript**
-- **TailwindCSS** _(included but minimal usage)_
 - **Custom global CSS**
 - **Custom React Hooks** (e.g. `useActiveSection`, `useMediaQuery`) for interactivity and responsiveness
 

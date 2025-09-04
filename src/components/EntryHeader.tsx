@@ -12,7 +12,7 @@ type Props = {
 export function EntryHeader({ first, second, third, image }: Props) {
   return (
     <div>
-      <div className={styles.entryRow}>
+      <div className={styles.entryHeader}>
         <img src={image} alt="" aria-hidden="true" className={styles.entryImg} />
         <div>
           <h3>{first}</h3>

@@ -1,24 +1,27 @@
 /* Entry CSS */
 
 .entryRow {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.entryHeader {
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
 }
 
-.entryRow h3 {
+.entryHeader h3 {
   margin: 0;
 }
 
-.entrySecond {
-  margin-bottom: 0.2rem;
+.entrySecond,
+.entryThird {
+  margin-block: 0.2rem;
 }
 
 .entryThird {
   font-size: 0.8rem;
-  margin-bottom: 0.2rem;
   color: var(--text-secondary);
 }
 
@@ -31,7 +34,7 @@
 
 /* PDF styling */
 @media print {
-  .entryRow {
+  .entryHeader {
     margin-top: 1rem;
   }
 

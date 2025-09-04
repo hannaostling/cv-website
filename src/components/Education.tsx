@@ -5,6 +5,7 @@ import { EntryHeader } from "@/components/EntryHeader";
 import type { EducationItem } from "@/data/schema";
 import { formatDate } from "@/lib/date";
 import { Section } from "./Section";
+import styles from "./EntryHeader.module.css";
 
 type Props = {
   education: EducationItem[];
@@ -18,9 +19,11 @@ export function Education({ education }: Props) {
       {education.map((edu, index) => {
         const dateStr = `${formatDate(edu.timeStart, isEnglish)} – ${formatDate(edu.timeEnd, isEnglish)}`;
         return (
-          <div key={index}>
-            <EntryHeader first={edu.title} second={edu.school} third={`${dateStr}`} image={edu.image} />
-            <p>{edu.description}</p>
+          <div className={styles.entryRow}>
+            <div className="entry-row" key={index}>
+              <EntryHeader first={edu.title} second={edu.school} third={`${dateStr}`} image={edu.image} />
+              <p>{edu.description}</p>
+            </div>
           </div>
         );
       })}

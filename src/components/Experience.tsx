@@ -5,6 +5,7 @@ import { EntryHeader } from "@/components/EntryHeader";
 import type { Job } from "@/data/schema";
 import { formatDate, calculateDuration } from "@/lib/date";
 import { Section } from "./Section";
+import styles from "./EntryHeader.module.css";
 
 type Props = {
   experience: Job[];
@@ -21,7 +22,7 @@ export function Experience({ experience }: Props) {
         const duration = ` · ${calculateDuration(job.timeStart, job.timeEnd, isEnglish)}`;
 
         return (
-          <div key={index}>
+          <div className={styles.entryRow} key={index}>
             <EntryHeader
               first={`${job.title}, ${job.company}`}
               second={`${dateStr} ${duration}`}

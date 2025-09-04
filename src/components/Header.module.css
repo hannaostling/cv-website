@@ -36,6 +36,7 @@
   display: inline-flex;
   align-items: center;
   gap: 1rem;
+  font-size: x-small;
 }
 
 /* Icon + dropdown wrapper */
