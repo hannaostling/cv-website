@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 
-export type SectionType = "primary" | "secondary";
+export type SectionType = "primary" | "primary-no-seperator" | "secondary";
 
 type SectionProps = PropsWithChildren<{
   type: SectionType;
@@ -11,7 +11,11 @@ type SectionProps = PropsWithChildren<{
 
 export function Section({ type, children, id, className, ariaHeading }: SectionProps) {
   return (
-    <section id={id} className={`section-${type} ${className ?? ""}`} aria-labelledby={ariaHeading ?? ""}>
+    <section
+      id={id}
+      className={`section-${type} ${className ?? ""} section-separator`}
+      aria-labelledby={ariaHeading ?? ""}
+    >
       <div className="common-padding">{children}</div>
     </section>
   );

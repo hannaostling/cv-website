@@ -12,12 +12,7 @@ export function Recommendations({ recommendations }: Props) {
   const isEnglish = usePathname().startsWith("/en");
 
   return (
-    <Section
-      type="secondary"
-      id="recommendations"
-      ariaHeading="recommendations-heading"
-      className={`${styles.recommendationsSection} no-print`}
-    >
+    <Section type="secondary" id="recommendations" ariaHeading="recommendations-heading" className="no-print">
       <h2 id="recommendations-heading">{isEnglish ? "Recommendations" : "Rekommendationer"}</h2>
 
       <div className={styles.recommendationsGrid}>

@@ -1,11 +1,5 @@
 /* Recommendations CSS */
 
-.recommendationsSection {
-  background: var(--background-secondary);
-  padding-top: 2em;
-  padding-bottom: 2em;
-}
-
 .recommendationsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

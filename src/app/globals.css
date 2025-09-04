@@ -101,7 +101,8 @@ button {
 
 /* Commonly occurring */
 
-.section-primary {
+.section-primary,
+.section-primary-no-seperator {
   --bleed-bg: var(--background-primary);
   background: var(--bleed-bg);
   box-shadow: 0 0 0 100vmax var(--bleed-bg);
@@ -116,9 +117,20 @@ button {
 }
 
 .section-primary,
+.section-secondary,
+.section-primary-no-seperator {
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  padding-block: 0rem;
+}
+
+.section-primary {
+  border-bottom: 3px solid var(--border);
+}
+
 .section-secondary {
-  margin-top: 1.5rem;
-  margin-bottom: 3.5rem;
+  border-top: 2px solid var(--border);
+  border-bottom: 2px solid var(--border);
 }
 
 .common-padding {
@@ -157,12 +169,6 @@ button {
   .common-padding {
     padding-block: 2rem;
     padding-inline: 3rem;
-  }
-
-  .section-primary,
-  .section-secondary {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
   }
 }
 

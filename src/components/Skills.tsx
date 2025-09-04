@@ -12,7 +12,7 @@ export function Skills({ skills }: Props) {
   const isEnglish = usePathname().startsWith("/en");
 
   return (
-    <Section type="primary" id="skills" ariaHeading="skills-heading">
+    <Section type="primary-no-seperator" id="skills" ariaHeading="skills-heading">
       <h2 id="skills-heading">{isEnglish ? "Skills" : "Kompetenser"}</h2>
       <div className="skills-grid">
         {skills.map((skill, i) => (
