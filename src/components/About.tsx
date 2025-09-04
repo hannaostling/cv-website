@@ -22,11 +22,7 @@ export function About({ profile }: Props) {
           <p className={styles.aboutContactRow}>
             <span>
               🔗{" "}
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
             </span>
@@ -38,10 +34,7 @@ export function About({ profile }: Props) {
         </div>
         <picture className={styles.profileImg}>
           <source srcSet={darkModeImage} media="(prefers-color-scheme: dark)" />
-          <source
-            srcSet={lightModeImage}
-            media="(prefers-color-scheme: light)"
-          />
+          <source srcSet={lightModeImage} media="(prefers-color-scheme: light)" />
           <img src={`${lightModeImage}`} alt={`Image of ${profile.name}`} />
         </picture>
       </div>

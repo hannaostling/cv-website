@@ -15,19 +15,10 @@ export function Experience({ experience }: Props) {
 
   return (
     <Section type="primary" id="experience" ariaHeading="experience-heading">
-      <h2 id="experience-heading">
-        {isEnglish ? "Work Experience" : "Arbetslivserfarenhet"}
-      </h2>
+      <h2 id="experience-heading">{isEnglish ? "Work Experience" : "Arbetslivserfarenhet"}</h2>
       {experience.map((job, index) => {
-        const dateStr = `${formatDate(job.timeStart, isEnglish)} – ${formatDate(
-          job.timeEnd,
-          isEnglish
-        )}`;
-        const duration = ` · ${calculateDuration(
-          job.timeStart,
-          job.timeEnd,
-          isEnglish
-        )}`;
+        const dateStr = `${formatDate(job.timeStart, isEnglish)} – ${formatDate(job.timeEnd, isEnglish)}`;
+        const duration = ` · ${calculateDuration(job.timeStart, job.timeEnd, isEnglish)}`;
 
         return (
           <div key={index}>

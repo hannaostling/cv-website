@@ -18,17 +18,11 @@ export function Recommendations({ recommendations }: Props) {
       ariaHeading="recommendations-heading"
       className={`${styles.recommendationsSection} no-print`}
     >
-      <h2 id="recommendations-heading">
-        {isEnglish ? "Recommendations" : "Rekommendationer"}
-      </h2>
+      <h2 id="recommendations-heading">{isEnglish ? "Recommendations" : "Rekommendationer"}</h2>
 
       <div className={styles.recommendationsGrid}>
         {recommendations.map((rec) => (
-          <RecommendationItem
-            key={`${rec.name}-${rec.date}`}
-            rec={rec}
-            isEnglish={isEnglish}
-          />
+          <RecommendationItem key={`${rec.name}-${rec.date}`} rec={rec} isEnglish={isEnglish} />
         ))}
       </div>
     </Section>

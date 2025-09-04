@@ -3,13 +3,7 @@
 import type { Skill } from "@/data/schema";
 import { getString, levelLabel } from "@/lib/skills";
 
-export function SkillItem({
-  skill,
-  isEnglish,
-}: {
-  skill: Skill;
-  isEnglish: boolean;
-}) {
+export function SkillItem({ skill, isEnglish }: { skill: Skill; isEnglish: boolean }) {
   return (
     <article>
       <div>

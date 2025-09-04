@@ -16,18 +16,10 @@ export function Education({ education }: Props) {
     <Section type="primary" id="education" ariaHeading="education-heading">
       <h2 id="education-heading">{isEnglish ? "Education" : "Utbildning"}</h2>
       {education.map((edu, index) => {
-        const dateStr = `${formatDate(edu.timeStart, isEnglish)} – ${formatDate(
-          edu.timeEnd,
-          isEnglish
-        )}`;
+        const dateStr = `${formatDate(edu.timeStart, isEnglish)} – ${formatDate(edu.timeEnd, isEnglish)}`;
         return (
           <div key={index}>
-            <EntryHeader
-              first={edu.title}
-              second={edu.school}
-              third={`${dateStr}`}
-              image={edu.image}
-            />
+            <EntryHeader first={edu.title} second={edu.school} third={`${dateStr}`} image={edu.image} />
             <p>{edu.description}</p>
           </div>
         );

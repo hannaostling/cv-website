@@ -10,11 +10,7 @@ export function ExportButton() {
 
   return (
     <div>
-      <button
-        className={`${styles.footerBtn} no-print`}
-        type="button"
-        onClick={() => window.print()}
-      >
+      <button className={`${styles.footerBtn} no-print`} type="button" onClick={() => window.print()}>
         <ExportIcon />
         {isEnglish ? "Export CV" : "Exportera CV"}
       </button>

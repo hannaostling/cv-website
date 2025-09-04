@@ -9,19 +9,9 @@ type SectionProps = PropsWithChildren<{
   ariaHeading?: string;
 }>;
 
-export function Section({
-  type,
-  children,
-  id,
-  className,
-  ariaHeading,
-}: SectionProps) {
+export function Section({ type, children, id, className, ariaHeading }: SectionProps) {
   return (
-    <section
-      id={id}
-      className={`section-${type} ${className ?? ""}`}
-      aria-labelledby={ariaHeading ?? ""}
-    >
+    <section id={id} className={`section-${type} ${className ?? ""}`} aria-labelledby={ariaHeading ?? ""}>
       <div className="common-padding">{children}</div>
     </section>
   );

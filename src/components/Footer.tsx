@@ -23,10 +23,7 @@ export default function Footer() {
   });
 
   return (
-    <footer
-      className={`${styles.footer} section-secondary no-print`}
-      role="contentinfo"
-    >
+    <footer className={`${styles.footer} section-secondary no-print`} role="contentinfo">
       <div className={styles.inner}>
         <div className={styles.left}>
           <button

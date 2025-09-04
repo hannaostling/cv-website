@@ -8,13 +8,7 @@ import { useRef, useState } from "react";
 import styles from "./Header.module.css";
 
 export default function Header() {
-  const sections = [
-    "about",
-    "experience",
-    "education",
-    "recommendations",
-    "skills",
-  ];
+  const sections = ["about", "experience", "education", "recommendations", "skills"];
 
   const active = useActiveSection(sections);
   const pathname = usePathname();
@@ -41,11 +35,7 @@ export default function Header() {
   useMenuCloseHandlers(openMenu, () => setOpenMenu(false), menuBtnRef);
 
   return (
-    <header
-      className={`${styles.header} no-print ${
-        active === "about" ? styles.noBorder : ""
-      }`}
-    >
+    <header className={`${styles.header} no-print ${active === "about" ? styles.noBorder : ""}`}>
       <div className={styles.inner}>
         {isSmall ? (
           // Icon + dropdown on small screens
@@ -60,11 +50,7 @@ export default function Header() {
               onClick={() => setOpenMenu((v) => !v)}
             >
               {isEnglish ? "Menu" : "Meny"}
-              <svg
-                className={styles.menuIcon}
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
+              <svg className={styles.menuIcon} viewBox="0 0 24 24" aria-hidden="true">
                 {openMenu ? (
                   <path
                     d="M6 6l12 12M18 6L6 18"
@@ -87,9 +73,7 @@ export default function Header() {
 
             <div
               id={menuPanelId}
-              className={`${styles.menuPanel} ${
-                openMenu ? styles.openMenu : ""
-              }`}
+              className={`${styles.menuPanel} ${openMenu ? styles.openMenu : ""}`}
               role="region"
               aria-label={isEnglish ? "Main menu" : "Huvudmeny"}
             >
