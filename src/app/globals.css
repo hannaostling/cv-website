@@ -37,10 +37,6 @@ p {
   color: inherit;
 }
 
-a {
-  text-decoration: none;
-}
-
 p {
   font-size: 0.9rem;
   line-height: 1.6;
@@ -92,12 +88,29 @@ li {
   color: var(--text-secondary);
 }
 
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 1;
+}
+
+a:active,
+button:active {
+  opacity: 0.5;
+}
+
 button {
   border: none;
   background-color: transparent;
   font: inherit;
   color: inherit;
-  cursor: pointer;
 }
 
 /* Commonly occurring */
