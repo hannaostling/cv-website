@@ -17,8 +17,8 @@ import { Skills } from "@/components/Skills";
 export default function Home() {
   return (
     <>
-      <About profile={profile} />
-      <main>
+      <main className="page">
+        <About profile={profile} />
         <Experience experience={experience} />
         <Education education={education} />
         <Recommendations recommendations={recommendations} />

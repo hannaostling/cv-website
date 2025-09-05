@@ -1,6 +1,6 @@
 /* Light mode ☀️ */
 :root {
-  --background: #fffcfa;
+  --root: #f5f1ef;
   --background-primary: #fffcfa;
   --background-secondary: #f5f1ef;
   --text-primary: #101010;
@@ -11,7 +11,7 @@
 /* Dark mode 🌚 */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #101014;
+    --root: #151522;
     --background-primary: #101014;
     --background-secondary: #151522;
     --text-primary: #f0f0f0;
@@ -22,7 +22,7 @@
 
 body {
   margin: 0;
-  background: var(--background);
+  background: var(--root);
   color: var(--text-primary);
   font-family: "Avenir Next", Arial, Helvetica, sans-serif;
 }
@@ -100,6 +100,11 @@ button {
 }
 
 /* Commonly occurring */
+
+.page {
+  background: var(--background-primary);
+  padding-bottom: 1rem;
+}
 
 .section-primary,
 .section-primary-no-seperator {
