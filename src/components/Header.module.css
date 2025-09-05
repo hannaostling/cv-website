@@ -149,5 +149,6 @@
 @media (max-width: 850px) {
   .inner {
     padding-inline: 1.5rem;
+    text-transform: capitalize;
   }
 }

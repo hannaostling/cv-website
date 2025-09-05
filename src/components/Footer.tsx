@@ -22,7 +22,7 @@ export default function Footer() {
   });
 
   return (
-    <footer className={`${styles.footer} section-secondary no-print`} role="contentinfo">
+    <footer className={`${styles.footer} no-print`} role="contentinfo">
       <div className={styles.inner}>
         <div className={styles.left}>
           <button
@@ -37,7 +37,9 @@ export default function Footer() {
           >
             <GlobeIcon />
             <span>{isEnglish ? "Language" : "Språk"}</span>
-            <span className={styles.caret} aria-hidden></span>
+            <span className={styles.caret} aria-hidden>
+              ▾
+            </span>
           </button>
 
           <div
