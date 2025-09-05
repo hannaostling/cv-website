@@ -6,7 +6,7 @@
   --text-primary: #101010;
   --text-secondary: #3e3e3e;
   --border: rgba(0, 0, 0, 0.06);
-  --header-height: 1rem;
+  --header-height: 1.5rem;
 }
 
 /* Dark mode 🌚 */
@@ -208,6 +208,7 @@ button {
   * {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    overflow: visible !important;
   }
 
   @page {
@@ -215,31 +216,24 @@ button {
   }
 
   html,
-  body {
-    width: 100%;
-  }
-
+  body,
   main {
     width: 100%;
     max-width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   h1 {
     font-size: 2rem;
   }
-
   h2 {
     font-size: 1.1rem;
   }
-
   h3 {
     font-size: 0.9rem;
   }
-
-  p {
-    font-size: 0.7rem;
-  }
-
+  p,
   ul {
     font-size: 0.7rem;
   }
@@ -248,10 +242,39 @@ button {
     display: none !important;
   }
 
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .page-break:first-child {
+    page-break-before: auto;
+    break-before: auto;
+  }
+
+  .page,
+  .section-primary-no-seperator,
+  .section-primary,
+  .section-secondary {
+    margin-top: 0;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    clip-path: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    transform: none !important;
+  }
+
   .skills-grid {
     gap: 1rem;
     margin-top: 1rem;
     line-height: 1.4;
+  }
+
+  .section-secondary {
+    border-top: 0px;
   }
 }
 

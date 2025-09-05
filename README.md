@@ -58,6 +58,7 @@ This CV can be exported as a print-optimized PDF using a built-in **“Export as
 - Allow full-width layout on paper (desktop only)
 - Hide non-essential elements (e.g. recommendations, buttons)
 - Preserve visual consistency across print and web
+- Ensure certain sections always start on a new page using a `.page-break` class
 
 > 🖥️ **Note:** The export button is hidden on mobile devices to prevent degraded PDF output. Mobile browsers often apply fixed margins and ignore background styling during printing, which may lead to unexpected results. For best results, export from a desktop browser.
 
