@@ -15,7 +15,7 @@ This is a personal CV website built with [Next.js](https://nextjs.org/) and [Typ
 - 💡 Dedicated **Skills** section highlighting both technical and personal strengths
 - 🧭 Custom hooks for navigation, scroll behavior, and print layout
 
-## 🚀 Tech Stack
+## 💻 Tech Stack
 
 - **Next.js App Router**
 - **TypeScript**
@@ -67,3 +67,12 @@ This CV can be exported as a print-optimized PDF using a built-in **“Export as
 - Image sizes are optimized for performance
 - No third-party **state** libraries used – everything is kept simple and modular using native React hooks
 - Recommendations are visible on the web version but excluded from PDF export to keep the CV concise
+
+## 🚀 Deploy with FTP
+
+1. Run `npm run build` in the terminal of this project to generate the static HTML files
+2. Open and connect to your preferred FTP client (e.g. FileZilla)
+3. In the **remote** pane, navigate to the remote directory
+4. In the **local** pane, navigate to the `out/` folder of this project
+5. Upload _all contents_ of the `out/` folder to the server
+6. Visit your domain to see the changes live!
