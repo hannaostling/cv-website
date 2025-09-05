@@ -18,7 +18,6 @@ export default function Footer() {
 
   useCloseOnOutsideClick(openLang, [langBtnRef, langPanelRef], () => {
     setOpenLang(false);
-    // Keep focus behavior: return focus to the button when pressing ESC
     langBtnRef.current?.focus();
   });
 
@@ -38,9 +37,7 @@ export default function Footer() {
           >
             <GlobeIcon />
             <span>{isEnglish ? "Language" : "Språk"}</span>
-            <span className={styles.caret} aria-hidden>
-              ▾
-            </span>
+            <span className={styles.caret} aria-hidden></span>
           </button>
 
           <div
@@ -57,7 +54,6 @@ export default function Footer() {
 
           <ExportButton />
         </div>
-
         <div className={styles.copyright}>
           <span>© Östling IT {new Date().getFullYear()}</span>
         </div>

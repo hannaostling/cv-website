@@ -2,7 +2,7 @@
 
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { useMenuCloseHandlers } from "@/hooks/useMenuCloseHandlers";
+import { useCloseOnOutsideClick } from "@/hooks/useCloseOnOutsideClick";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 import styles from "./Header.module.css";
@@ -26,7 +26,12 @@ export default function Header() {
 
   const menuPanelId = "menu-panel";
   const menuBtnRef = useRef<HTMLButtonElement>(null);
-  useMenuCloseHandlers(openMenu, () => setOpenMenu(false), menuBtnRef);
+  const menuPanelRef = useRef<HTMLDivElement>(null);
+
+  useCloseOnOutsideClick(openMenu, [menuBtnRef, menuPanelRef], () => {
+    setOpenMenu(false);
+    menuBtnRef.current?.focus();
+  });
 
   return (
     <header className={`${styles.header} no-print ${active === "about" ? styles.noBorder : ""}`}>
@@ -69,6 +74,7 @@ export default function Header() {
 
             <div
               id={menuPanelId}
+              ref={menuPanelRef}
               className={`${styles.menuPanel} ${openMenu ? styles.openMenu : ""}`}
               role="region"
               aria-label={isEnglish ? "Main menu" : "Huvudmeny"}
