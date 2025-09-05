@@ -30,8 +30,9 @@ src/            # Source code
 ├── app/        # Pages and layout
 ├── components/ # Reusable UI sections (About, Experience, Recommendations, etc.)
 ├── data/       # Static content (localized)
-├── lib/        # Helper functions (e.g. date formatting)
 ├── hooks/      # Custom hooks (navigation tracking, media queries, etc.)
+├── icons/      # SVG icon components (MenuIcon, CloseIcon, GlobeIcon, etc.)
+├── lib/        # Helper functions (e.g. date formatting)
 ```
 
 ## ⚙️ Getting Started

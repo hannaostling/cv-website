@@ -1,11 +1,24 @@
-export function MenuIcon() {
+type Props = {
+  size?: number;
+  strokeWidth?: number;
+  className?: string;
+};
+
+export function MenuIcon({ size, strokeWidth = 2, className }: Props) {
   return (
-    <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+    <svg
+      width={size ?? undefined}
+      height={size ?? undefined}
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      aria-hidden="true"
+      className={className}
+    >
       <path
         d="M4 7h16M4 12h16M4 17h16"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth={strokeWidth}
         strokeLinecap="round"
       />
     </svg>

@@ -3,6 +3,9 @@
 import type { Profile } from "@/data/schema";
 import styles from "./About.module.css";
 import { Section } from "./Section";
+import { LinkIcon } from "@/icons/LinkIcon";
+import { HomeIcon } from "@/icons/HomeIcon";
+import { MailIcon } from "@/icons/MailIcon";
 
 type Props = {
   profile: Profile;
@@ -19,18 +22,21 @@ export function About({ profile }: Props) {
           <h1 id="about-heading">{profile.name}</h1>
           <h4>{profile.title}</h4>
           <p>{profile.description}</p>
-          <p className={styles.aboutContactRow}>
-            <span>
-              🔗{" "}
+          <div className={styles.aboutContactRow}>
+            <div className={styles.iconTextWrapper}>
+              <LinkIcon />
               <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
-            </span>
-            <span>
-              ✉️ <a href={`mailto:${profile.email}`}>{profile.email}</a>
-            </span>
-            <span>🏡 {profile.location}</span>
-          </p>
+            </div>
+            <div className={styles.iconTextWrapper}>
+              <MailIcon />
+              <a href={`mailto:${profile.email}`}>{profile.email}</a>
+            </div>
+            <div className={styles.iconTextWrapper}>
+              <HomeIcon /> {profile.location}
+            </div>
+          </div>
         </div>
         <picture className={styles.profileImg}>
           <source srcSet={darkModeImage} media="(prefers-color-scheme: dark)" />

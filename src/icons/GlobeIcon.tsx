@@ -1,12 +1,17 @@
-export function GlobeIcon() {
+type Props = {
+  size?: number;
+  className?: string;
+};
+
+export function GlobeIcon({ size = 18, className }: Props) {
   return (
     <svg
-      width="19"
-      height="19"
+      width={size}
+      height={size}
       viewBox="0 0 200 200"
       fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
+      className={className}
     >
       <path
         fillRule="evenodd"
