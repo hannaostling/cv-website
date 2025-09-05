@@ -14,7 +14,8 @@ export default function Header() {
   const isEnglish = pathname.startsWith("/en");
   const [openMenu, setOpenMenu] = useState(false);
   const isSmall = useMediaQuery("(max-width: 850px)");
-  const showHeader = isSmall && active !== "about";
+  const renderSmall = isSmall === true;
+  const showHeader = renderSmall && active !== "about";
 
   const SECTIONS = [
     { id: "about", label: isEnglish ? "About" : "Om" },
@@ -35,8 +36,8 @@ export default function Header() {
 
   return (
     <header className={`${styles.header} no-print ${active === "about" ? styles.noBorder : ""}`}>
-      <div className={styles.inner}>
-        {isSmall ? (
+      <div className={styles.inner} suppressHydrationWarning>
+        {renderSmall ? (
           <div className={styles.iconMode}>
             <h2 className={`${styles.headerTitle} ${showHeader ? styles.fadeIn : styles.fadeOut}`}>
               Hanna Östling
