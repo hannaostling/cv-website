@@ -3,7 +3,7 @@
 import { useId, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ExportButton } from "@/components/ExportButton";
-import { GlobeIcon } from "@/components/GlobeIcon";
+import { GlobeIcon } from "@/icons/GlobeIcon";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useCloseOnOutsideClick } from "@/hooks/useCloseOnOutsideClick";
 import styles from "./Footer.module.css";

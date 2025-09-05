@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { ExportIcon } from "@/components/ExportIcon";
+import { ExportIcon } from "@/icons/ExportIcon";
 import styles from "./Footer.module.css";
 
 export function ExportButton() {

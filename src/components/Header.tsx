@@ -6,6 +6,7 @@ import { useCloseOnOutsideClick } from "@/hooks/useCloseOnOutsideClick";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
+import { MenuButton } from "./MenuButton";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -45,35 +46,12 @@ export default function Header() {
               Hanna Östling
             </h2>
 
-            <button
+            <MenuButton
               ref={menuBtnRef}
-              type="button"
-              className={styles.menuToggle}
-              aria-haspopup="menu"
-              aria-expanded={openMenu}
-              aria-controls={menuPanelId}
+              open={openMenu}
               onClick={() => setOpenMenu((v) => !v)}
-            >
-              <svg className={styles.menuIcon} viewBox="0 0 20 20" aria-hidden="true">
-                {openMenu ? (
-                  <path
-                    d="M6 6l12 12M18 6L6 18"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                ) : (
-                  <path
-                    d="M4 7h16M4 12h16M4 17h16"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                )}
-              </svg>
-            </button>
+              controlsId={menuPanelId}
+            />
 
             <div
               id={menuPanelId}
