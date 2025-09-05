@@ -5,6 +5,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useCloseOnOutsideClick } from "@/hooks/useCloseOnOutsideClick";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
+import { useScrolledPast } from "@/hooks/useScrolledPast";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -15,7 +16,8 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
   const isSmall = useMediaQuery("(max-width: 850px)");
   const renderSmall = isSmall === true;
-  const showHeader = renderSmall && active !== "about";
+  const pastAbout = useScrolledPast("about-heading", 80);
+  const showHeader = renderSmall && pastAbout;
 
   const SECTIONS = [
     { id: "about", label: isEnglish ? "About" : "Om" },
