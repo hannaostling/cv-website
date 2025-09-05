@@ -6,6 +6,7 @@
   --text-primary: #101010;
   --text-secondary: #3e3e3e;
   --border: rgba(0, 0, 0, 0.06);
+  --header-height: 1rem;
 }
 
 /* Dark mode 🌚 */
@@ -88,7 +89,7 @@ nav a.active {
 }
 
 li {
-  color: var(--color-text-secondary);
+  color: var(--text-secondary);
 }
 
 button {
@@ -104,6 +105,7 @@ button {
 .page {
   background: var(--background-primary);
   padding-bottom: 1rem;
+  margin-top: var(--header-height);
 }
 
 .section-primary,

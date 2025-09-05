@@ -7,9 +7,7 @@
   right: 0;
   left: 0;
   z-index: 100;
-  min-height: 64px;
   border-bottom: 2px solid var(--border);
-  backdrop-filter: saturate(140%) blur(6px);
   padding-bottom: 1rem;
   transition: border-color 0.2s ease;
 }
@@ -41,7 +39,39 @@
 
 /* Icon + dropdown wrapper */
 .iconMode {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 25px;
+  padding: 0 1rem;
+}
+
+/* Title with fade */
+.headerTitle {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-transform: capitalize;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.fadeIn {
+  opacity: 1;
+  visibility: visible;
+  overflow: visible;
+  transition: opacity 0.8s ease, visibility 0s linear 0s;
+}
+
+.fadeOut {
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: opacity 0.5s ease, visibility 0s linear 0.5s;
 }
 
 .navInline a[data-active="true"],
@@ -67,10 +97,10 @@
 }
 
 /* Icons */
-.menuIcon,
-.chevron {
-  width: 1rem;
-  height: 1rem;
+.menuIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  transform: translateY(-8px);
 }
 
 /* Drop-down main menu */
@@ -81,7 +111,7 @@
   top: calc(100% + 0.5rem);
   background: var(--background-secondary);
   border-radius: 0.5rem;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 5px 24px rgba(0, 0, 0, 0.25);
   max-height: 0;
   padding: 0;
   opacity: 0;
@@ -113,4 +143,11 @@
 .menuList a:focus-visible {
   outline: 2px solid transparent;
   background: rgba(0, 0, 0, 0.04);
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 850px) {
+  .inner {
+    padding-inline: 1.5rem;
+  }
 }

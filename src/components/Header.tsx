@@ -9,24 +9,18 @@ import styles from "./Header.module.css";
 
 export default function Header() {
   const sections = ["about", "experience", "education", "recommendations", "skills"];
-
   const active = useActiveSection(sections);
   const pathname = usePathname();
   const isEnglish = pathname.startsWith("/en");
   const [openMenu, setOpenMenu] = useState(false);
   const isSmall = useMediaQuery("(max-width: 850px)");
+  const showHeader = isSmall && active !== "about";
 
   const SECTIONS = [
     { id: "about", label: isEnglish ? "About" : "Om" },
-    {
-      id: "experience",
-      label: isEnglish ? "Work Experience" : "Arbetslivserfarenhet",
-    },
+    { id: "experience", label: isEnglish ? "Work Experience" : "Arbetslivserfarenhet" },
     { id: "education", label: isEnglish ? "Education" : "Utbildning" },
-    {
-      id: "recommendations",
-      label: isEnglish ? "Recommendations" : "Rekommendationer",
-    },
+    { id: "recommendations", label: isEnglish ? "Recommendations" : "Rekommendationer" },
     { id: "skills", label: isEnglish ? "Skills" : "Kompetenser" },
   ];
 
@@ -38,8 +32,11 @@ export default function Header() {
     <header className={`${styles.header} no-print ${active === "about" ? styles.noBorder : ""}`}>
       <div className={styles.inner}>
         {isSmall ? (
-          // Icon + dropdown on small screens
           <div className={styles.iconMode}>
+            <h2 className={`${styles.headerTitle} ${showHeader ? styles.fadeIn : styles.fadeOut}`}>
+              Hanna Östling
+            </h2>
+
             <button
               ref={menuBtnRef}
               type="button"
@@ -49,8 +46,7 @@ export default function Header() {
               aria-controls={menuPanelId}
               onClick={() => setOpenMenu((v) => !v)}
             >
-              {isEnglish ? "Menu" : "Meny"}
-              <svg className={styles.menuIcon} viewBox="0 0 24 24" aria-hidden="true">
+              <svg className={styles.menuIcon} viewBox="0 0 20 20" aria-hidden="true">
                 {openMenu ? (
                   <path
                     d="M6 6l12 12M18 6L6 18"
@@ -92,7 +88,6 @@ export default function Header() {
             </div>
           </div>
         ) : (
-          // Inline (large) menu on larger screens
           <nav className={styles.navInline} aria-label="Main">
             {SECTIONS.map((s) => (
               <a
