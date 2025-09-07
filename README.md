@@ -21,18 +21,22 @@ This is a personal CV website built with [Next.js](https://nextjs.org/) and [Typ
 - **TypeScript**
 - **Custom global CSS**
 - **Custom React Hooks** (e.g. `useActiveSection`, `useMediaQuery`) for interactivity and responsiveness
+- **next-intl** for locale routing and translations (`/` = Swedish, `/en` = English)
 
 ## 📂 Structure
 
 ```
-public/         # Assets like images
-src/            # Source code
-├── app/        # Pages and layout
-├── components/ # Reusable UI sections (About, Experience, Recommendations, etc.)
-├── data/       # Static content (localized)
-├── hooks/      # Custom hooks (navigation tracking, media queries, etc.)
-├── icons/      # SVG icon components (MenuIcon, CloseIcon, GlobeIcon, etc.)
-├── lib/        # Helper functions (e.g. date formatting)
+public/             # Assets like images
+src/                # Source code
+├── app/            # App router pages and layouts
+│   ├── [locale]/   # Locale-aware routes (/en, /sv, /)
+│   └── layout.tsx  # Root layout (html/body)
+├── components/     # Reusable UI sections (About, Experience, Education, etc.)
+├── data/           # Static content with Translated fields
+├── hooks/          # Custom hooks (e.g. clamp detection, media queries)
+├── icons/          # SVG icon components (MenuIcon, CloseIcon, GlobeIcon, etc.)
+├── i18n/           # Translation setup (next-intl messages, helpers)
+├── lib/            # Helper functions (e.g. date formatting, string utilities)
 ```
 
 ## ⚙️ Getting Started

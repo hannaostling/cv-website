@@ -1,29 +1,19 @@
-// 🇸🇪 Swedish Home Page
-export const metadata = {
-  title: "Hanna Östling – CV (SV)",
-};
+export const dynamic = "force-static";
 
-import { profile } from "@/data/profile.sv";
-import { experience } from "@/data/experience.sv";
-import { education } from "@/data/education.sv";
-import { recommendations } from "@/data/recommendations.sv";
-import { skills } from "@/data/skills";
-import { About } from "@/components/About";
-import { Experience } from "@/components/Experience";
-import { Education } from "@/components/Education";
-import { Recommendations } from "@/components/Recommendations";
-import { Skills } from "@/components/Skills";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import CvPage from "@/components/CvPage";
+import { NextIntlClientProvider } from "next-intl";
+import { profile } from "@/data/profile";
 
-export default function Home() {
+export default async function RootSv() {
+  const messages = (await import("@/i18n/locales/sv.json")).default;
+
   return (
-    <>
-      <main className="page">
-        <About profile={profile} />
-        <Experience experience={experience} />
-        <Education education={education} />
-        <Recommendations recommendations={recommendations} />
-        <Skills skills={skills} />
-      </main>
-    </>
+    <NextIntlClientProvider locale="sv" messages={messages}>
+      <Header profile={profile} />
+      <CvPage />
+      <Footer />
+    </NextIntlClientProvider>
   );
 }

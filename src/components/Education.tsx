@@ -1,27 +1,33 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import styles from "./EntryHeader.module.css";
+import { useTranslated, useTranslatedData } from "@/i18n/useTranslated";
+import { useYearMonthOrPresent } from "@/lib/date";
 import { EntryHeader } from "@/components/EntryHeader";
 import type { EducationItem } from "@/data/schema";
-import { formatDate } from "@/lib/date";
 import { Section } from "./Section";
-import styles from "./EntryHeader.module.css";
 
 type Props = {
   education: EducationItem[];
 };
 
 export function Education({ education }: Props) {
-  const isEnglish = usePathname().startsWith("/en");
+  const heading = useTranslated("education");
+  const formatYM = useYearMonthOrPresent();
+  const trData = useTranslatedData();
+
   return (
     <Section type="primary-no-seperator" id="education" ariaHeading="education-heading">
-      <h2 id="education-heading">{isEnglish ? "Education" : "Utbildning"}</h2>
+      <h2 id="education-heading">{heading}</h2>
       {education.map((edu, index) => {
-        const dateStr = `${formatDate(edu.timeStart, isEnglish)} – ${formatDate(edu.timeEnd, isEnglish)}`;
+        const title = trData(edu.title);
+        const description = trData(edu.description);
+        const dateStr = `${formatYM(edu.timeStart)} – ${formatYM(edu.timeEnd)}`;
+
         return (
           <div className={styles.entryRow} key={index}>
-            <EntryHeader first={edu.title} second={edu.school} third={dateStr} image={edu.image} />
-            <p>{edu.description}</p>
+            <EntryHeader first={title} second={edu.school} third={dateStr} image={edu.image} />
+            <p>{description}</p>
           </div>
         );
       })}

@@ -1,19 +1,22 @@
 "use client";
 
 import type { Skill } from "@/data/schema";
-import { getString, levelLabel } from "@/lib/skills";
+import { useTranslatedData } from "@/i18n/useTranslated";
 
-export function SkillItem({ skill, isEnglish }: { skill: Skill; isEnglish: boolean }) {
+export function SkillItem({ skill }: { skill: Skill }) {
+  const trData = useTranslatedData();
+
   return (
     <article>
       <div>
-        <h3 style={{ margin: 0 }}>{getString(skill.translated, isEnglish)}</h3>
+        <h3 style={{ margin: 0 }}>{trData(skill.title)}</h3>
       </div>
 
       <ul>
-        {skill.values.map((v, idx) => {
-          const name = getString(v.translated, isEnglish);
-          const level = v.level ? levelLabel(v.level, isEnglish) : null;
+        {skill.items.map((item, idx) => {
+          const name = trData(item.value);
+          const level = item.level ? trData(item.level) : null;
+
           return (
             <li key={`${name || "value"}-${idx}`}>
               {name}

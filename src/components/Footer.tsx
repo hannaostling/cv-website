@@ -1,11 +1,11 @@
 "use client";
 
 import { useId, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
 import { ExportButton } from "@/components/ExportButton";
 import { GlobeIcon } from "@/icons/GlobeIcon";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useCloseOnOutsideClick } from "@/hooks/useCloseOnOutsideClick";
+import { useTranslated } from "@/i18n/useTranslated";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -13,8 +13,6 @@ export default function Footer() {
   const langBtnRef = useRef<HTMLButtonElement>(null);
   const langPanelRef = useRef<HTMLDivElement>(null);
   const langPanelId = useId();
-  const pathname = usePathname();
-  const isEnglish = pathname.startsWith("/en");
 
   useCloseOnOutsideClick(openLang, [langBtnRef, langPanelRef], () => {
     setOpenLang(false);
@@ -36,7 +34,7 @@ export default function Footer() {
             onClick={() => setOpenLang((v) => !v)}
           >
             <GlobeIcon />
-            <span>{isEnglish ? "Language" : "Språk"}</span>
+            <span>{useTranslated("language")}</span>
             <span className={styles.caret} aria-hidden>
               ▾
             </span>

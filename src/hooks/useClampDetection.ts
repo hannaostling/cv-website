@@ -29,6 +29,7 @@ export function useClampDetection(
     ro.observe(el);
 
     return () => ro.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen, ref, ...deps]);
 
   return isClamped;

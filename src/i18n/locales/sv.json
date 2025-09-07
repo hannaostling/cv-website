@@ -1,0 +1,19 @@
+{
+  "languageCode": "sv",
+  "dateFormat": "sv-SE",
+  "about": "Om",
+  "experience": "Arbetslivserfarenhet",
+  "education": "Utbildning",
+  "recommendations": "Rekommendationer",
+  "skills": "Kompetenser",
+  "copyright": "© Östling IT {year}",
+  "menu": "Huvudmeny",
+  "linkedIn": "LinkedIn",
+  "readMore": "Läs mer",
+  "language": "Språk",
+  "exportCv": "Exportera CV",
+  "present": "Nu",
+  "years": "år",
+  "oneYear": "år",
+  "monthsShort": "mån"
+}

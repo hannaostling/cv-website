@@ -1,26 +1,19 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import type { Skill } from "@/data/schema";
 import { SkillItem } from "@/components/SkillItem";
-import { getString } from "@/lib/skills";
 import { Section } from "./Section";
+import { useTranslated } from "@/i18n/useTranslated";
 
 type Props = { skills: Skill[] };
 
 export function Skills({ skills }: Props) {
-  const isEnglish = usePathname().startsWith("/en");
-
   return (
     <Section type="primary-no-seperator" id="skills" className="page-break" ariaHeading="skills-heading">
-      <h2 id="skills-heading">{isEnglish ? "Skills" : "Kompetenser"}</h2>
+      <h2 id="skills-heading">{useTranslated("skills")}</h2>
       <div className="skills-grid">
-        {skills.map((skill, i) => (
-          <SkillItem
-            key={getString(skill.translated, isEnglish) || `skill-${i}`}
-            skill={skill}
-            isEnglish={isEnglish}
-          />
+        {skills.map((skill) => (
+          <SkillItem key={skill.id} skill={skill} />
         ))}
       </div>
     </Section>

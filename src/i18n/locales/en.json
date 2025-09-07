@@ -1,0 +1,19 @@
+{
+  "languageCode": "en",
+  "dateFormat": "en-GB",
+  "about": "About",
+  "experience": "Work Experience",
+  "education": "Education",
+  "recommendations": "Recommendations",
+  "skills": "Skills",
+  "copyright": "© Östling IT {year}",
+  "menu": "Main menu",
+  "linkedIn": "LinkedIn",
+  "readMore": "Read more",
+  "language": "Language",
+  "exportCv": "Export CV",
+  "present": "Present",
+  "years": "years",
+  "oneYear": "year",
+  "monthsShort": "mo"
+}

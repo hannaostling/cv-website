@@ -1,36 +1,34 @@
 "use client";
-
+import styles from "./Header.module.css";
+import { useTranslated } from "@/i18n/useTranslated";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useCloseOnOutsideClick } from "@/hooks/useCloseOnOutsideClick";
-import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import { MenuButton } from "./MenuButton";
-import styles from "./Header.module.css";
+import type { Profile } from "@/data/schema";
 
-export default function Header() {
-  const sections = ["about", "experience", "education", "recommendations", "skills"];
-  const active = useActiveSection(sections);
-  const pathname = usePathname();
-  const isEnglish = pathname.startsWith("/en");
+export default function Header({ profile }: { profile: Profile }) {
+  const SECTIONS = [
+    { id: "about", label: useTranslated("about") },
+    { id: "experience", label: useTranslated("experience") },
+    { id: "education", label: useTranslated("education") },
+    { id: "recommendations", label: useTranslated("recommendations") },
+    { id: "skills", label: useTranslated("skills") },
+  ];
+
+  const active = useActiveSection(SECTIONS.map((s) => s.id));
   const [openMenu, setOpenMenu] = useState(false);
   const isSmall = useMediaQuery("(max-width: 850px)");
   const renderSmall = isSmall === true;
   const pastAbout = useScrolledPast("about-heading", 80);
   const showHeader = renderSmall && pastAbout;
 
-  const SECTIONS = [
-    { id: "about", label: isEnglish ? "About" : "Om" },
-    { id: "experience", label: isEnglish ? "Work Experience" : "Arbetslivserfarenhet" },
-    { id: "education", label: isEnglish ? "Education" : "Utbildning" },
-    { id: "recommendations", label: isEnglish ? "Recommendations" : "Rekommendationer" },
-    { id: "skills", label: isEnglish ? "Skills" : "Kompetenser" },
-  ];
-
   const menuPanelId = "menu-panel";
   const menuBtnRef = useRef<HTMLButtonElement>(null);
   const menuPanelRef = useRef<HTMLDivElement>(null);
+  const menuAriaLabel = useTranslated("menu");
 
   useCloseOnOutsideClick(openMenu, [menuBtnRef, menuPanelRef], () => {
     setOpenMenu(false);
@@ -43,7 +41,7 @@ export default function Header() {
         {renderSmall ? (
           <div className={styles.iconMode}>
             <h2 className={`${styles.headerTitle} ${showHeader ? styles.fadeIn : styles.fadeOut}`}>
-              Hanna Östling
+              {profile.name}
             </h2>
 
             <MenuButton
@@ -58,7 +56,7 @@ export default function Header() {
               ref={menuPanelRef}
               className={`${styles.menuPanel} ${openMenu ? styles.openMenu : ""}`}
               role="region"
-              aria-label={isEnglish ? "Main menu" : "Huvudmeny"}
+              aria-label={menuAriaLabel}
             >
               <div className={styles.menuList}>
                 {SECTIONS.map((s) => (

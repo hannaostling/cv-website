@@ -1,70 +1,73 @@
 // YYYY-MM
-export type YearMonth =
-  `${number}${number}${number}${number}-${number}${number}`;
+export type YearMonth = `${number}${number}${number}${number}-${number}${number}`;
 
 // YYYY-MM-DD
-export type YearMonthDay =
-  `${number}${number}${number}${number}-${number}${number}-${number}${number}`;
+export type YearMonthDay = `${number}${number}${number}${number}-${number}${number}-${number}${number}`;
 
 export interface EducationItem {
-  title: string;
+  id: string;
+  title: Translated;
   school: string;
   timeStart: YearMonth;
   timeEnd: YearMonth | null;
-  location: string;
-  description: string;
+  location: Translated;
+  description: Translated;
   image: string;
 }
 
 export interface Job {
-  title: string;
+  id: string;
+  title: Translated;
   company: string;
   timeStart: YearMonth;
   timeEnd: YearMonth | null;
-  location: string;
-  details: string[];
+  location: Translated;
+  details: Translated[];
   image: string;
 }
 
 export interface Profile {
+  id: string;
   name: string;
-  title: string;
+  title: Translated;
   email: string;
   phone: string;
-  location: string;
+  location: Translated;
   linkedin: string;
-  description: string;
+  description: Translated;
   image: string;
+  imageDarkMode: string | null;
 }
 
 export interface Recommendation {
+  id: string;
   name: string;
-  title: string;
-  relation: string;
-  text: string;
+  title: Translated;
+  relation: Translated;
+  text: Translated;
   image: string;
   date: YearMonthDay;
 }
 
-export type SkillLevel =
-  | "beginner"
-  | "basic"
-  | "intermediate"
-  | "proficient"
-  | "advanced";
-
 export interface Skill {
-  translated: Translated;
-  values: SkillValue[];
+  id: string;
+  order: number;
+  title: Translated;
+  items: SkillItem[];
 }
 
-export interface SkillValue {
-  translated: Translated;
-  level?: SkillLevel;
+export interface SkillItem {
+  id?: string;
+  order?: number;
+  value: Translated;
+  level?: Translated;
 }
 
+/**
+ * OBS: If you add another language, also update the type handling
+ * in `useTranslatedData` (src/i18n/useTranslated.tsx).
+ */
 export interface Translated {
-  universal?: string;
-  sv?: string;
-  en?: string;
+  sv: string;
+  en: string;
 }
