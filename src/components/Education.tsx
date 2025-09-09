@@ -17,7 +17,7 @@ export function Education({ education }: Props) {
   const trData = useTranslatedData();
 
   return (
-    <Section type="primary-no-seperator" id="education" ariaHeading="education-heading">
+    <Section type="primary" id="education" ariaHeading="education-heading">
       <h2 id="education-heading">{heading}</h2>
       {education.map((edu, index) => {
         const title = trData(edu.title);

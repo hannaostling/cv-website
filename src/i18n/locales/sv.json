@@ -3,8 +3,11 @@
   "dateFormat": "sv-SE",
   "about": "Om",
   "experience": "Arbetslivserfarenhet",
+  "jobs": "Jobb",
+  "work": "Arbete",
   "education": "Utbildning",
   "recommendations": "Rekommendationer",
+  "reviews": "Omdömen",
   "skills": "Kompetenser",
   "copyright": "© Östling IT {year}",
   "menu": "Huvudmeny",
@@ -15,5 +18,12 @@
   "present": "Nu",
   "years": "år",
   "oneYear": "år",
-  "monthsShort": "mån"
+  "monthsShort": "mån",
+  "courses": "Kurser",
+  "issued": "Utfärdad",
+  "ongoing": "Pågående",
+  "certificate": "Certifikat",
+  "certificates": "Certifikat",
+  "other": "Övrigt",
+  "showCredential": "Visa legitimering"
 }

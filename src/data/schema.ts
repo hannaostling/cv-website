@@ -63,6 +63,17 @@ export interface SkillItem {
   level?: Translated;
 }
 
+export interface Course {
+  id: string;
+  title: Translated;
+  school: string;
+  timeStart?: YearMonthDay;
+  timeEnd?: YearMonthDay;
+  description?: Translated;
+  image: string;
+  certificate?: string;
+}
+
 /**
  * OBS: If you add another language, also update the type handling
  * in `useTranslatedData` (src/i18n/useTranslated.tsx).

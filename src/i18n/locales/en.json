@@ -3,8 +3,11 @@
   "dateFormat": "en-GB",
   "about": "About",
   "experience": "Work Experience",
+  "jobs": "Jobs",
+  "work": "Work",
   "education": "Education",
   "recommendations": "Recommendations",
+  "reviews": "Reviews",
   "skills": "Skills",
   "copyright": "© Östling IT {year}",
   "menu": "Main menu",
@@ -15,5 +18,12 @@
   "present": "Present",
   "years": "years",
   "oneYear": "year",
-  "monthsShort": "mo"
+  "monthsShort": "mo",
+  "courses": "Courses",
+  "issued": "Issued",
+  "ongoing": "Ongoing",
+  "certificate": "Certificate",
+  "certificates": "Certificates",
+  "other": "Other",
+  "showCredential": "Show credential"
 }

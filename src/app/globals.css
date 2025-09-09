@@ -5,6 +5,7 @@
   --background-secondary: #f5f1ef;
   --text-primary: #101010;
   --text-secondary: #3e3e3e;
+  --button-background: #ffffff;
   --border: rgba(0, 0, 0, 0.06);
   --header-height: 1.5rem;
 }
@@ -17,6 +18,7 @@
     --background-secondary: #151522;
     --text-primary: #f0f0f0;
     --text-secondary: #c8c6c6;
+    --button-background: #000000;
     --border: rgba(255, 255, 255, 0.06);
   }
 }
@@ -174,6 +176,39 @@ button {
   margin-top: 0.5rem;
 }
 
+/* Grid Row */
+
+.gridRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.gridRowImageRound {
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.gridRowImage {
+  border-radius: 10%;
+  margin-top: 5px;
+}
+
+.gridRowTitle {
+  margin: 0;
+}
+
+.gridRowSubtitle {
+  margin: 0.1rem 0 0;
+}
+
+.gridRowDateText {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
 /* Language Switcher */
 
 .language-switcher {
@@ -267,14 +302,28 @@ button {
     transform: none !important;
   }
 
+  .section-primary-no-seperator {
+    border-top: 3px solid var(--border);
+  }
+
   .skills-grid {
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     line-height: 1.4;
   }
 
   .section-secondary {
     border-top: 0px;
+  }
+
+  .gridRowImage,
+  .gridRowImageRound {
+    width: 30px;
+    height: 30px;
+  }
+
+  .gridRow {
+    margin-top: 0.5rem;
   }
 }
 

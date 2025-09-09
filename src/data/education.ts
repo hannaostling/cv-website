@@ -2,6 +2,25 @@ import type { EducationItem } from "@/data/schema";
 
 export const education: EducationItem[] = [
   {
+    id: "funka-accessibility-documents",
+    title: {
+      sv: "Digital tillgänglighet",
+      en: "Digital Accessibility",
+    },
+    school: "Funka Academy",
+    timeStart: "2025-09",
+    timeEnd: null,
+    location: {
+      sv: "Distans",
+      en: "Remote",
+    },
+    description: {
+      sv: "Jag läser Tillgänglighetssäkring av dokument och Inkluderande kommunikation och publicering. Två utbildningar på 40 YH-poäng vardera med delvis överlappande innehåll. Kurserna ger kunskap om tillgänglighet och inkludering, lagkrav, klarspråk samt praktisk publicering av tillgängliga dokument och digitalt innehåll.",
+      en: "I am studying Document Accessibility and Inclusive Communication and Publishing. Two programs of 40 higher vocational credits each with some overlapping content. The courses provide knowledge of accessibility and inclusion, legal requirements, plain language, and practical publishing of accessible documents and digital content.",
+    },
+    image: "/companies/Funka.png",
+  },
+  {
     id: "iths-app-dev-yh-2017-2019",
     title: {
       sv: "YH Apputveckling",

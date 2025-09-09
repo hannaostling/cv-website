@@ -24,7 +24,7 @@ export function Experience({ experience }: Props) {
         const title = trData(job.title);
         const location = trData(job.location);
         const dateStr = `${formatYM(job.timeStart)} – ${formatYM(job.timeEnd)}`;
-        const duration = ` · ${calcDuration(job.timeStart, job.timeEnd)}`;
+        const duration = ` \u00A0·\u00A0 ${calcDuration(job.timeStart, job.timeEnd)}`;
 
         return (
           <div className={styles.entryRow} key={index}>

@@ -9,7 +9,7 @@ type Props = { skills: Skill[] };
 
 export function Skills({ skills }: Props) {
   return (
-    <Section type="primary-no-seperator" id="skills" className="page-break" ariaHeading="skills-heading">
+    <Section type="primary-no-seperator" id="skills" ariaHeading="skills-heading">
       <h2 id="skills-heading">{useTranslated("skills")}</h2>
       <div className="skills-grid">
         {skills.map((skill) => (

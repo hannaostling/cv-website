@@ -7,34 +7,8 @@
   column-gap: 3rem;
 }
 
-.recHeader {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-  margin-top: 2rem;
-}
-
-.recImage {
-  border-radius: 50%;
-  margin-top: 5px;
-}
-
-.recName {
-  margin: 0;
-}
-
-.recTitle {
-  margin: 0.1rem 0 0;
-}
-
-.recMeta {
-  color: var(--color-text-secondary);
-  font-size: 0.8rem;
-  margin-top: 0.2rem;
-}
-
 .recText {
-  color: var(--color-text-secondary);
+  color: var(--text-secondary);
   font-size: 0.9rem;
   line-height: 1.7;
   white-space: pre-line;
@@ -42,8 +16,8 @@
 
 .recTextClamp {
   display: -webkit-box;
-  -webkit-line-clamp: 6;
-  line-clamp: 6;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

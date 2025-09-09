@@ -28,10 +28,37 @@
 .entryImg {
   object-fit: contain;
   margin-top: 8px;
+  border-radius: 10%;
+}
+
+.button {
+  padding-inline: 0.5rem;
+  padding-block: 0.2rem;
+  border-radius: 5px;
+  border-width: 0.5px;
+  margin-left: 2.8rem;
+  border-color: var(--text-secondary);
+  border-style: solid;
+  background-color: var(--button-background);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.courseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  row-gap: 1rem;
+  column-gap: 3rem;
 }
 
 /* PDF styling */
 @media print {
+  .entryRow,
+  .courseGrid {
+    padding-top: 0rem;
+    padding-bottom: 0.5rem;
+  }
+
   .entryHeader {
     margin-top: 1rem;
   }
@@ -40,5 +67,9 @@
     width: 35px;
     height: 35px;
     margin-top: 5px;
+  }
+
+  .button {
+    display: none !important;
   }
 }

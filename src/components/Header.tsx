@@ -12,7 +12,7 @@ import type { Profile } from "@/data/schema";
 export default function Header({ profile }: { profile: Profile }) {
   const SECTIONS = [
     { id: "about", label: useTranslated("about") },
-    { id: "experience", label: useTranslated("experience") },
+    { id: "experience", label: useTranslated("work") },
     { id: "education", label: useTranslated("education") },
     { id: "recommendations", label: useTranslated("recommendations") },
     { id: "skills", label: useTranslated("skills") },

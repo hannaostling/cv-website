@@ -42,34 +42,26 @@ export function useActiveSection(
         const currentId = activeRef.current;
         const currentR = ratiosRef.current[currentId] ?? 0;
 
-        // Strong bottom-of-page fallback: if we're at (or ~at) bottom and the last section is even slightly visible, activate it.
-        const doc = document.documentElement;
-        const bottomReached = window.innerHeight + window.scrollY >= doc.scrollHeight - 2;
-        const lastId = ids[ids.length - 1];
-        if (bottomReached && (ratiosRef.current[lastId] ?? 0) > 0) {
-          if (currentId !== lastId) setActive(lastId);
+        // Fallback when no section is visible
+        if (maxR === 0) {
+          const doc = document.documentElement;
+          const atTop = window.scrollY <= 1;
+          const atBottom = window.innerHeight + window.scrollY >= doc.scrollHeight - 1;
+          const lastId = ids[ids.length - 1];
+
+          const fallbackId = atBottom ? lastId : atTop ? ids[0] ?? "" : currentId;
+          if (fallbackId !== currentId) setActive(fallbackId);
           return;
         }
 
-        // Normal hysteresis rule: allow takeover only if max beats current by margin and passes minRatio
+        // Normal hysteresis logic
         const canOvertake = maxR >= minRatio && maxR > currentR + hysteresis;
-
-        // If current section is basically gone, allow the best visible to take over even if minRatio not reached
         const currentBarelyVisible = currentR < 0.05;
-
-        // Choose next
         const nextId = canOvertake || currentBarelyVisible ? maxId : currentId;
 
-        if (nextId !== currentId) {
-          setActive(nextId);
-        }
+        if (nextId !== currentId) setActive(nextId);
       },
-      {
-        root: null,
-        // Denser thresholds -> smoother ratio updates; we gate swap by hysteresis/minRatio
-        threshold: [0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-        rootMargin,
-      }
+      { root: null, threshold: [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1], rootMargin }
     );
 
     els.forEach((el) => io.observe(el));

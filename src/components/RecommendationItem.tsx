@@ -6,7 +6,7 @@ import type { Recommendation } from "@/data/schema";
 import { useClampDetection } from "@/hooks/useClampDetection";
 import { useTranslated, useTranslatedData } from "@/i18n/useTranslated";
 import { useYearMonthDay } from "@/lib/date";
-import Image from "next/image";
+import { GridRow } from "./GridRow";
 
 export function RecommendationItem({ rec }: { rec: Recommendation }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,21 +16,17 @@ export function RecommendationItem({ rec }: { rec: Recommendation }) {
   const readMore = useTranslated("readMore");
   const formatYMD = useYearMonthDay();
   const trData = useTranslatedData();
+  const dateText = `${formatYMD(rec.date)} - ${trData(rec.relation)}`;
 
   return (
     <article>
-      <div className={styles.recHeader}>
-        <Image src={rec.image} alt="" aria-hidden="true" width={40} height={40} className={styles.recImage} />
-        <div>
-          <h3 className={styles.recName}>{rec.name}</h3>
-          <p className={styles.recTitle}>{trData(rec.title)}</p>
-          <p className={styles.recMeta}>
-            <time dateTime={rec.date}>{formatYMD(rec.date)}</time>
-            {" - "}
-            {trData(rec.relation)}
-          </p>
-        </div>
-      </div>
+      <GridRow
+        title={rec.name}
+        subtitle={trData(rec.title)}
+        dateText={dateText}
+        image={rec.image}
+        roundImage={true}
+      ></GridRow>
 
       <p ref={pRef} className={`${styles.recText} ${isOpen ? "" : styles.recTextClamp}`}>
         {trData(rec.text)}
