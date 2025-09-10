@@ -4,6 +4,16 @@ export type YearMonth = `${number}${number}${number}${number}-${number}${number}
 // YYYY-MM-DD
 export type YearMonthDay = `${number}${number}${number}${number}-${number}${number}-${number}${number}`;
 
+export interface Person {
+  id: string;
+  profile: Profile;
+  experiences: Job[];
+  educations: EducationItem[];
+  courses: Course[];
+  recommendations: Recommendation[];
+  skills: Skill[];
+}
+
 export interface EducationItem {
   id: string;
   title: Translated;
@@ -27,7 +37,6 @@ export interface Job {
 }
 
 export interface Profile {
-  id: string;
   name: string;
   title: Translated;
   email: string;
