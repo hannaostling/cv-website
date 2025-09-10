@@ -1,9 +1,9 @@
-import CvPage from "@/components/CvPage";
+import PersonContainer from "@/components/PersonContainer";
 
 export function generateStaticParams() {
   return [{ locale: "sv" }, { locale: "en" }];
 }
 
-export default function Home() {
-  return <CvPage />;
+export default function Page() {
+  return <PersonContainer />;
 }

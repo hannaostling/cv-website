@@ -14,6 +14,7 @@ This is a personal CV website built with [Next.js](https://nextjs.org/) and [Typ
 - ✍️ Recommendation section with expandable text (excluded from PDF export)
 - 💡 Dedicated **Skills** section highlighting both technical and personal strengths
 - 🧭 Custom hooks for navigation, scroll behavior, and print layout
+- 🔄 Fetches data from Firestore with local fallback
 
 ## 💻 Tech Stack
 
@@ -22,11 +23,15 @@ This is a personal CV website built with [Next.js](https://nextjs.org/) and [Typ
 - **Custom global CSS**
 - **Custom React Hooks** (e.g. `useActiveSection`, `useMediaQuery`) for interactivity and responsiveness
 - **next-intl** for locale routing and translations (`/` = Swedish, `/en` = English)
+- **Firebase** (Firestore + client setup)
+- **Framer Motion** for animations and transitions
 
 ## 📂 Structure
 
 ```
+private/            # Service account keys or other local-only files (git-ignored)
 public/             # Assets like images
+scripts/            # Utility scripts (Firestore export)
 src/                # Source code
 ├── app/            # App router pages and layouts
 │   ├── [locale]/   # Locale-aware routes (/en, /sv, /)
@@ -46,6 +51,19 @@ Install dependencies:
 ```bash
 npm install
 ```
+
+Create a `.env.local` file in the root of the project with your Firebase configuration variables for the client-side environment:
+
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+```
+
+For scripts that run via Node (e.g. Firestore export scripts), place your service account key JSON file at `/private/serviceAccountKey.json` (this file is not checked into git).
 
 Run locally:
 
@@ -73,6 +91,7 @@ This CV can be exported as a print-optimized PDF using a built-in **“Export as
 - Image sizes are optimized for performance
 - No third-party **state** libraries used – everything is kept simple and modular using native React hooks
 - Recommendations are visible on the web version but excluded from PDF export to keep the CV concise
+- Local data is used as fallback when Firestore data is unavailable or offline
 
 ## 🚀 Deploy with FTP
 

@@ -1,21 +1,24 @@
-import { hanna } from "@/data/person";
-
 import { AboutSection } from "@/components/AboutSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { EducationSection } from "@/components/EducationSection";
+import { CourseSection } from "@/components/CourseSection";
 import { RecommendationSection } from "@/components/RecommendationSection";
 import { SkillSection } from "@/components/SkillSection";
-import { CourseSection } from "@/components/CourseSection";
+import { Person } from "@/data/schema";
 
-export default function CvPage() {
+type Props = {
+  person: Person;
+};
+
+export default function CvPage({ person }: Props) {
   return (
     <main className="page">
-      <AboutSection profile={hanna.profile} />
-      <ExperienceSection experience={hanna.experiences} />
-      <EducationSection education={hanna.educations} />
-      <CourseSection courses={hanna.courses} />
-      <RecommendationSection recommendations={hanna.recommendations} />
-      <SkillSection skills={hanna.skills} />
+      <AboutSection profile={person.profile} />
+      <ExperienceSection experience={person.experiences} />
+      <EducationSection education={person.educations} />
+      <CourseSection courses={person.courses} />
+      <RecommendationSection recommendations={person.recommendations} />
+      <SkillSection skills={person.skills} />
     </main>
   );
 }

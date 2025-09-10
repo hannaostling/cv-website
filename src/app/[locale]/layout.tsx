@@ -1,9 +1,6 @@
 import type { ReactNode } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { hanna } from "@/data/person";
 
 export default async function LocaleLayout({
   children,
@@ -23,9 +20,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <Header profile={hanna.profile} />
       {children}
-      <Footer />
     </NextIntlClientProvider>
   );
 }
