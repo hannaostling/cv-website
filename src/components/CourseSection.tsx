@@ -8,7 +8,7 @@ import { CourseRow } from "@/components/CourseRow";
 
 type Props = { courses: Course[] };
 
-export function Courses({ courses }: Props) {
+export function CourseSection({ courses }: Props) {
   const heading = useTranslated("certificates");
   const sorted = sortCourses(courses);
 

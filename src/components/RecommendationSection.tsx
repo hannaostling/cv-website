@@ -8,7 +8,7 @@ import { useTranslated } from "@/i18n/useTranslated";
 
 type Props = { recommendations: Recommendation[] };
 
-export function Recommendations({ recommendations }: Props) {
+export function RecommendationSection({ recommendations }: Props) {
   return (
     <Section type="secondary" id="recommendations" ariaHeading="recommendations-heading" className="no-print">
       <h2 id="recommendations-heading">{useTranslated("recommendations")}</h2>

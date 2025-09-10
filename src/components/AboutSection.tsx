@@ -12,7 +12,7 @@ type Props = {
   profile: Profile;
 };
 
-export function About({ profile }: Props) {
+export function AboutSection({ profile }: Props) {
   const lightModeImage = profile.image;
   const darkModeImage = profile.imageDarkMode ?? lightModeImage;
   const trData = useTranslatedData();

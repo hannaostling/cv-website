@@ -11,7 +11,7 @@ type Props = {
   experience: Job[];
 };
 
-export function Experience({ experience }: Props) {
+export function ExperienceSection({ experience }: Props) {
   const heading = useTranslated("experience");
   const formatYM = useYearMonthOrPresent();
   const trData = useTranslatedData();

@@ -11,7 +11,7 @@ type Props = {
   education: EducationItem[];
 };
 
-export function Education({ education }: Props) {
+export function EducationSection({ education }: Props) {
   const heading = useTranslated("education");
   const formatYM = useYearMonthOrPresent();
   const trData = useTranslatedData();

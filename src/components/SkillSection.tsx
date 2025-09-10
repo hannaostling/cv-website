@@ -7,7 +7,7 @@ import { useTranslated } from "@/i18n/useTranslated";
 
 type Props = { skills: Skill[] };
 
-export function Skills({ skills }: Props) {
+export function SkillSection({ skills }: Props) {
   return (
     <Section type="primary-no-seperator" id="skills" ariaHeading="skills-heading">
       <h2 id="skills-heading">{useTranslated("skills")}</h2>
