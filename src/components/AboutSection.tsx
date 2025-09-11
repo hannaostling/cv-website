@@ -26,17 +26,17 @@ export function AboutSection({ profile }: Props) {
           <p>{trData(profile.description)}</p>
           <div className={styles.aboutContactRow}>
             <div className={styles.iconTextWrapper}>
-              <LinkIcon />
+              <LinkIcon className={styles.aboutIcon} />
               <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
             </div>
             <div className={styles.iconTextWrapper}>
-              <MailIcon />
+              <MailIcon className={styles.aboutIcon} />
               <a href={`mailto:${profile.email}`}>{profile.email}</a>
             </div>
             <div className={styles.iconTextWrapper}>
-              <HomeIcon /> {trData(profile.location)}
+              <HomeIcon className={styles.aboutIcon} /> {trData(profile.location)}
             </div>
           </div>
         </div>

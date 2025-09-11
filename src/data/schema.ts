@@ -61,6 +61,7 @@ export interface Recommendation {
 export interface Skill {
   id: string;
   order: number;
+  hideOnPrint?: boolean;
   title: Translated;
   items: SkillItem[];
 }

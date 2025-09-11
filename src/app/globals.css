@@ -86,10 +86,6 @@ nav a.active {
   font-weight: bold;
 }
 
-li {
-  color: var(--text-secondary);
-}
-
 a {
   text-decoration: none;
 }
@@ -259,8 +255,17 @@ button {
     padding: 0;
   }
 
+  @page {
+    margin-top: 1cm;
+    background-color: var(--background-primary);
+  }
+
+  @page: first {
+    margin-top: 0;
+  }
+
   h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   h2 {
     font-size: 1.1rem;
@@ -275,6 +280,11 @@ button {
 
   .no-print {
     display: none !important;
+  }
+
+  .no-inside-break {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   .page-break {
@@ -318,12 +328,22 @@ button {
 
   .gridRowImage,
   .gridRowImageRound {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
   }
 
   .gridRow {
     margin-top: 0.5rem;
+    gap: 0.6rem;
+  }
+
+  .gridRow p {
+    line-height: 1rem;
+  }
+
+  .gridRowDateText {
+    font-size: 0.65rem;
   }
 }
 

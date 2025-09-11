@@ -5,9 +5,10 @@ import { useTranslatedData } from "@/i18n/useTranslated";
 
 export function SkillItem({ skill }: { skill: Skill }) {
   const trData = useTranslatedData();
+  const hideOnPrint = skill.hideOnPrint ?? false;
 
   return (
-    <article>
+    <article className={hideOnPrint ? "no-print" : undefined}>
       <div>
         <h3 style={{ margin: 0 }}>{trData(skill.title)}</h3>
       </div>
