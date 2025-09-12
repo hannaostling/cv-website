@@ -9,6 +9,8 @@ import { CourseRow } from "@/components/CourseRow";
 type Props = { courses: Course[] };
 
 export function CourseSection({ courses }: Props) {
+  if (!courses || courses.length === 0) return null;
+
   const heading = useTranslated("certificates");
   const sorted = sortCourses(courses);
 

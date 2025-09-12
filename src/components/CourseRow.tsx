@@ -13,7 +13,7 @@ export function CourseRow({ course }: { course: Course }) {
   const ongoing = useTranslated("ongoing");
   const formatYM = useYearMonthDay();
   const issuedStr = course.timeEnd ? `${issued} ${formatYM(course.timeEnd)}` : ongoing;
-  const desc = course.description ? `${trData(course.description)}` : "";
+  const imageFallback = "/icons/Certificate.svg";
 
   return (
     <article>
@@ -22,6 +22,7 @@ export function CourseRow({ course }: { course: Course }) {
         subtitle={course.school}
         dateText={issuedStr}
         image={course.image}
+        imageFallback={imageFallback}
       ></GridRow>
 
       {course.certificate && (

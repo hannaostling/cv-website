@@ -17,6 +17,8 @@ export function ExperienceSection({ experience }: Props) {
   const trData = useTranslatedData();
   const calcDuration = useCalculateDuration();
 
+  if (!experience || experience.length === 0) return null;
+
   return (
     <Section type="primary" id="experience" ariaHeading="experience-heading">
       <h2 id="experience-heading">{heading}</h2>
@@ -25,6 +27,8 @@ export function ExperienceSection({ experience }: Props) {
         const location = trData(job.location);
         const dateStr = `${formatYM(job.timeStart)} – ${formatYM(job.timeEnd)}`;
         const duration = ` \u00A0·\u00A0 ${calcDuration(job.timeStart, job.timeEnd)}`;
+        const imageFallback = "/icons/Work.svg";
+        const detailTexts = job.details ?? [];
 
         return (
           <div className={styles.entryRow} key={index}>
@@ -33,9 +37,10 @@ export function ExperienceSection({ experience }: Props) {
               second={`${dateStr} ${duration}`}
               third={location}
               image={job.image}
+              imageFallback={imageFallback}
             />
             <ul>
-              {job.details.map((item, i) => (
+              {detailTexts.map((item, i) => (
                 <li key={i}>{trData(item)}</li>
               ))}
             </ul>

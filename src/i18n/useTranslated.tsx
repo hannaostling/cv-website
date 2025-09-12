@@ -16,8 +16,12 @@ export function useTranslatedData() {
   const lang = useTranslated("languageCode") as "sv" | "en";
 
   return useCallback(
-    (t: Translated, fallback: "sv" | "en" = "sv"): string => {
-      return t[lang] ?? t[fallback];
+    (t?: Translated): string => {
+      if (!t) return "";
+      if (t[lang]) return t[lang];
+      if (lang === "sv" && t.en) return t.en;
+      if (lang === "en" && t.sv) return t.sv;
+      return "";
     },
     [lang]
   );

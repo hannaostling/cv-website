@@ -1,24 +1,25 @@
 "use client";
 
-import Image from "next/image";
+import { IconContainer } from "./IconContainer";
 
 type Props = {
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   dateText: string;
-  image: string;
+  image?: string;
+  imageFallback: string;
   roundImage?: boolean;
 };
 
-export function GridRow({ title, subtitle, dateText, image, roundImage = false }: Props) {
+export function GridRow({ title, subtitle, dateText, image, imageFallback, roundImage = false }: Props) {
   const imageClass = roundImage ? "gridRowImageRound" : "gridRowImage";
 
   return (
     <div className="gridRow">
-      <Image src={image} alt="" aria-hidden="true" width={40} height={40} className={imageClass} />
+      <IconContainer image={image} imageFallback={imageFallback} size={40} className={imageClass} />
       <div>
-        <h3 className="gridRowTitle">{title}</h3>
-        <p className="gridRowSubtitle">{subtitle}</p>
+        {title && <h3 className="gridRowTitle">{title}</h3>}
+        {subtitle && <p className="gridRowSubtitle">{subtitle}</p>}
         <p className="gridRowDateText">{dateText}</p>
       </div>
     </div>

@@ -9,9 +9,13 @@ import { useTranslated } from "@/i18n/useTranslated";
 type Props = { recommendations: Recommendation[] };
 
 export function RecommendationSection({ recommendations }: Props) {
+  const heading = useTranslated("recommendations");
+
+  if (!recommendations || recommendations.length === 0) return null;
+
   return (
     <Section type="secondary" id="recommendations" ariaHeading="recommendations-heading" className="no-print">
-      <h2 id="recommendations-heading">{useTranslated("recommendations")}</h2>
+      <h2 id="recommendations-heading">{heading}</h2>
 
       <div className={styles.recommendationsGrid}>
         {recommendations.map((rec) => (

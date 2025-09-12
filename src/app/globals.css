@@ -7,6 +7,8 @@
   --text-secondary: #3e3e3e;
   --button-background: #ffffff;
   --border: rgba(0, 0, 0, 0.06);
+  --icon: #847872;
+  --icon-background: #e5dcd7;
   --header-height: 1.5rem;
 }
 
@@ -19,6 +21,8 @@
     --text-primary: #f0f0f0;
     --text-secondary: #c8c6c6;
     --button-background: #000000;
+    --icon: #cfcfcf;
+    --icon-background: #353541;
     --border: rgba(255, 255, 255, 0.06);
   }
 }

@@ -16,45 +16,45 @@ export interface Person {
 
 export interface EducationItem {
   id: string;
-  title: Translated;
+  title?: Translated;
   school: string;
   timeStart: YearMonth;
-  timeEnd: YearMonth | null;
-  location: Translated;
-  description: Translated;
-  image: string;
+  timeEnd?: YearMonth;
+  location?: Translated;
+  description?: Translated;
+  image?: string;
 }
 
 export interface Job {
   id: string;
-  title: Translated;
+  title?: Translated;
   company: string;
   timeStart: YearMonth;
-  timeEnd: YearMonth | null;
-  location: Translated;
+  timeEnd?: YearMonth;
+  location?: Translated;
   details: Translated[];
-  image: string;
+  image?: string;
 }
 
 export interface Profile {
   name: string;
-  title: Translated;
-  email: string;
-  phone: string;
-  location: Translated;
-  linkedin: string;
-  description: Translated;
-  image: string;
-  imageDarkMode: string | null;
+  title?: Translated;
+  email?: string;
+  phone?: string;
+  location?: Translated;
+  linkedin?: string;
+  description?: Translated;
+  image?: string;
+  imageDarkMode?: string | null;
 }
 
 export interface Recommendation {
   id: string;
   name: string;
-  title: Translated;
+  title?: Translated;
   relation: Translated;
   text: Translated;
-  image: string;
+  image?: string;
   date: YearMonthDay;
 }
 
@@ -76,11 +76,10 @@ export interface SkillItem {
 export interface Course {
   id: string;
   title: Translated;
-  school: string;
-  timeStart?: YearMonthDay;
+  school?: string;
   timeEnd?: YearMonthDay;
   description?: Translated;
-  image: string;
+  image?: string;
   certificate?: string;
 }
 

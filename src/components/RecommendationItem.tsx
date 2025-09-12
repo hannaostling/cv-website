@@ -17,6 +17,7 @@ export function RecommendationItem({ rec }: { rec: Recommendation }) {
   const formatYMD = useYearMonthDay();
   const trData = useTranslatedData();
   const dateText = `${formatYMD(rec.date)} - ${trData(rec.relation)}`;
+  const imageFallback = "/icons/Person.svg";
 
   return (
     <article>
@@ -25,6 +26,7 @@ export function RecommendationItem({ rec }: { rec: Recommendation }) {
         subtitle={trData(rec.title)}
         dateText={dateText}
         image={rec.image}
+        imageFallback={imageFallback}
         roundImage={true}
       ></GridRow>
 

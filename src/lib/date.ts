@@ -8,7 +8,7 @@ export function useYearMonthOrPresent() {
   const dateFormat = useTranslated("dateFormat");
 
   return useCallback(
-    (dateStr: YearMonth | null): string => {
+    (dateStr?: YearMonth): string => {
       if (!dateStr) return present;
       const [year, month] = dateStr.split("-");
       const date = new Date(Number(year), Number(month) - 1);
@@ -43,7 +43,7 @@ export function useCalculateDuration() {
   const monthsShortLabel = useTranslated("monthsShort");
 
   return useCallback(
-    (start: YearMonth, end: YearMonth | null): string => {
+    (start: YearMonth, end?: YearMonth): string => {
       const startDate = new Date(`${start}-01`);
       const endDate = end ? new Date(`${end}-01`) : new Date();
       const months =
