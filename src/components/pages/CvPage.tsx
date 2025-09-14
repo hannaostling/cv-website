@@ -64,15 +64,21 @@ export default function CvPage() {
   const p = person ?? hanna;
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: FADE_IN_DURATION }}>
-      <Header profile={p.profile} />
-      <AboutSection profile={p.profile} />
-      <ExperienceSection experience={p.experiences} />
-      <EducationSection education={p.educations} />
-      <CourseSection courses={p.courses} />
-      <RecommendationSection recommendations={p.recommendations} />
-      <SkillSection skills={p.skills} />
-      <Footer />
-    </motion.div>
+    <main className="page">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: FADE_IN_DURATION }}
+      >
+        <Header profile={p.profile} />
+        <AboutSection profile={p.profile} />
+        <ExperienceSection experience={p.experiences} />
+        <EducationSection education={p.educations} />
+        <CourseSection courses={p.courses} />
+        <RecommendationSection recommendations={p.recommendations} />
+        <SkillSection skills={p.skills} />
+        <Footer />
+      </motion.div>
+    </main>
   );
 }
