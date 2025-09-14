@@ -119,7 +119,6 @@ button {
 
 .page {
   background: var(--background-primary);
-  padding-bottom: 1rem;
   margin-top: var(--header-height);
 }
 

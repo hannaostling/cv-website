@@ -2,9 +2,10 @@
 
 .footer {
   margin-bottom: 0rem;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
   padding-top: 0.5rem;
   border-top: 2px solid var(--border);
+  background-color: var(--background-secondary);
 }
 
 .inner {
