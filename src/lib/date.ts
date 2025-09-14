@@ -50,6 +50,11 @@ export function useCalculateDuration() {
         (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
       const years = Math.floor(months / 12);
       const remainingMonths = months % 12;
+
+      if (years == 0 && remainingMonths == 0) {
+        return `1 ${monthsShortLabel}`;
+      }
+
       const yearStr = years > 0 ? `${years} ${years > 1 ? yearsLabel : oneYearLabel}` : "";
       const monthStr = remainingMonths > 0 ? `${remainingMonths} ${monthsShortLabel}` : "";
 
