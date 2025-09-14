@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./EntryHeader.module.css";
-import { IconContainer } from "./IconContainer";
+import { IconContainer } from "../primitives/IconContainer";
 
 type Props = {
   first?: string | null;

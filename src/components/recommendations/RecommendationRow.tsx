@@ -6,7 +6,7 @@ import type { Recommendation } from "@/data/schema";
 import { useClampDetection } from "@/hooks/useClampDetection";
 import { useTranslated, useTranslatedData } from "@/i18n/useTranslated";
 import { useYearMonthDay } from "@/lib/date";
-import { GridRow } from "./GridRow";
+import { GridRow } from "../primitives/GridRow";
 
 export function RecommendationRow({ rec }: { rec: Recommendation }) {
   const [isOpen, setIsOpen] = useState(false);

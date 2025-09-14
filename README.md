@@ -36,7 +36,7 @@ src/                # Source code
 ├── app/            # App router pages and layouts
 │   ├── [locale]/   # Locale-aware routes (/en, /sv, /)
 │   └── layout.tsx  # Root layout (html/body)
-├── components/     # Reusable UI sections (About, Experience, Education, etc.)
+├── components/     # Reusable UI components (About, Experience, Education, Buttons, etc.)
 ├── data/           # Static content with Translated fields
 ├── hooks/          # Custom hooks (e.g. clamp detection, media queries)
 ├── icons/          # SVG icon components (MenuIcon, CloseIcon, GlobeIcon, etc.)

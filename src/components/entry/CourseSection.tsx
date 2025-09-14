@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./EntryHeader.module.css";
-import { Section } from "./Section";
+import { Section } from "../primitives/Section";
 import type { Course } from "@/data/schema";
 import { useTranslated } from "@/i18n/useTranslated";
 import { CourseRow } from "./CourseRow";

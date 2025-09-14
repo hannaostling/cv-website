@@ -1,4 +1,4 @@
-import CvPage from "../../components/CvPage";
+import CvPage from "../../components/pages/CvPage";
 
 export function generateStaticParams() {
   return [{ locale: "sv" }, { locale: "en" }];

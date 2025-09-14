@@ -4,7 +4,7 @@ import styles from "./EntryHeader.module.css";
 import type { Course } from "@/data/schema";
 import { useTranslated, useTranslatedData } from "@/i18n/useTranslated";
 import { useYearMonthDay } from "@/lib/date";
-import { GridRow } from "./GridRow";
+import { GridRow } from "../primitives/GridRow";
 
 export function CourseRow({ course }: { course: Course }) {
   const showCredential = useTranslated("showCredential");

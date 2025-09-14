@@ -7,15 +7,15 @@ import { hanna } from "@/data/person";
 import { motion } from "framer-motion";
 import type { Person } from "@/data/schema";
 
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
 
-import { AboutSection } from "./AboutSection";
-import { ExperienceSection } from "./ExperienceSection";
-import { EducationSection } from "./EducationSection";
-import { CourseSection } from "./CourseSection";
-import { RecommendationSection } from "./RecommendationSection";
-import { SkillSection } from "./SkillSection";
+import { AboutSection } from "../about/AboutSection";
+import { ExperienceSection } from "../entry/ExperienceSection";
+import { EducationSection } from "../entry/EducationSection";
+import { CourseSection } from "../entry/CourseSection";
+import { RecommendationSection } from "../recommendations/RecommendationSection";
+import { SkillSection } from "../skills/SkillSection";
 
 const COLLECTION = "persons";
 const DOC_ID = "hanna-ostling";

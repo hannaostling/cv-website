@@ -1,9 +1,9 @@
 "use client";
 
 import { forwardRef } from "react";
-import { MenuIcon } from "../icons/MenuIcon";
-import { CloseIcon } from "../icons/CloseIcon";
-import styles from "./Header.module.css";
+import { MenuIcon } from "../../icons/MenuIcon";
+import { CloseIcon } from "../../icons/CloseIcon";
+import styles from "../header/Header.module.css";
 
 type Props = {
   open: boolean;

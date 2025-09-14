@@ -3,9 +3,9 @@
 import styles from "./EntryHeader.module.css";
 import { useTranslated, useTranslatedData } from "@/i18n/useTranslated";
 import { useYearMonthOrPresent, useCalculateDuration } from "@/lib/date";
-import { EntryHeader } from "@/components/EntryHeader";
+import { EntryHeader } from "./EntryHeader";
 import type { Job } from "@/data/schema";
-import { Section } from "./Section";
+import { Section } from "../primitives/Section";
 
 type Props = {
   experience: Job[];

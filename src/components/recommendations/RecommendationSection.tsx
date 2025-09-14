@@ -2,8 +2,8 @@
 
 import styles from "./RecommendationSection.module.css";
 import type { Recommendation } from "@/data/schema";
-import { RecommendationRow } from "@/components/RecommendationRow";
-import { Section } from "./Section";
+import { RecommendationRow } from "./RecommendationRow";
+import { Section } from "../primitives/Section";
 import { useTranslated } from "@/i18n/useTranslated";
 
 type Props = { recommendations: Recommendation[] };

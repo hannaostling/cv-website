@@ -6,7 +6,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useCloseOnOutsideClick } from "@/hooks/useCloseOnOutsideClick";
 import { useRef, useState } from "react";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
-import { MenuButton } from "./MenuButton";
+import { MenuButton } from "../primitives/MenuButton";
 import type { Profile } from "@/data/schema";
 
 export default function Header({ profile }: { profile: Profile }) {

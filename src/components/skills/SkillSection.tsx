@@ -1,8 +1,8 @@
 "use client";
 
 import type { Skill } from "@/data/schema";
-import { SkillRow } from "@/components/SkillRow";
-import { Section } from "./Section";
+import { SkillRow } from "./SkillRow";
+import { Section } from "../primitives/Section";
 import { useTranslated } from "@/i18n/useTranslated";
 
 type Props = { skills: Skill[] };

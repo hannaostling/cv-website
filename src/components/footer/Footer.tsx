@@ -3,7 +3,7 @@
 import { useId, useRef, useState } from "react";
 import { GlobeIcon } from "@/icons/GlobeIcon";
 import { ExportIcon } from "@/icons/ExportIcon";
-import { LanguageSwitcher } from "./LanguageSwitcher";
+import { LanguageSwitcher } from "../primitives/LanguageSwitcher";
 import { useCloseOnOutsideClick } from "@/hooks/useCloseOnOutsideClick";
 import { useTranslated } from "@/i18n/useTranslated";
 import styles from "./Footer.module.css";

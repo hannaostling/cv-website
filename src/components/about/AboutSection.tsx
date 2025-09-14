@@ -8,7 +8,7 @@ import { HomeIcon } from "@/icons/HomeIcon";
 import { MailIcon } from "@/icons/MailIcon";
 import { useTranslatedData } from "@/i18n/useTranslated";
 import { useState, useMemo } from "react";
-import { Section } from "./Section";
+import { Section } from "../primitives/Section";
 
 type Props = { profile: Profile };
 
