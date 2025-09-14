@@ -31,7 +31,7 @@ This is a personal CV website built with [Next.js](https://nextjs.org/) and [Typ
 ```
 private/            # Service account keys or other local-only files (git-ignored)
 public/             # Assets like images
-scripts/            # Utility scripts (Firestore export)
+scripts/            # Utility scripts (Firestore import)
 src/                # Source code
 ├── app/            # App router pages and layouts
 │   ├── [locale]/   # Locale-aware routes (/en, /sv, /)
@@ -84,6 +84,18 @@ This CV can be exported as a print-optimized PDF using a built-in **“Export as
 - Ensure certain sections always start on a new page using a `.page-break` class
 
 > 🖥️ **Note:** The export button is hidden on mobile devices to prevent degraded PDF output. Mobile browsers often apply fixed margins and ignore background styling during printing, which may lead to unexpected results. For best results, export from a desktop browser.
+
+## 🔥 Firestore Export
+
+You can upload your Firestore data using the following command:
+
+```bash
+npx tsx scripts/import-firestore.ts persons ./private/{yourFileName}.json
+```
+
+> 💡 Note: The script is named `import-firestore.ts` since it imports data into Firestore, but you can think of it as exporting from your local repository.
+
+This imports data from the specified JSON file into the `persons` collection (local → Firestore). Make sure you have your service account key JSON file at `./private/serviceAccountKey.json` for authentication.
 
 ## 📝 Notes
 
