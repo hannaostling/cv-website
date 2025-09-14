@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 
 export default function LoadingContainer() {
-  const srcLight = "/spinner-lm.svg";
-  const srcDark = "/spinner-dm.svg";
+  const srcLight = "/icons/Spinner-LM.svg";
+  const srcDark = "/icons/Spinner-DM.svg";
   const imgSize = 40;
 
   return (
