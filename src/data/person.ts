@@ -1,7 +1,7 @@
 import type { Person } from "@/data/schema";
 
 export const hanna: Person = {
-  id: "hanna-ostling",
+  id: "hanna",
   profile: {
     name: "Hanna Östling",
     title: {
@@ -24,100 +24,119 @@ export const hanna: Person = {
   },
   experiences: [
     {
-      id: "ostling-it-2025",
-      title: {
-        sv: "Apputvecklare",
-        en: "App Developer",
-      },
-      company: "Östling IT",
-      timeStart: "2025-01",
-      location: {
-        sv: "Göteborg, Sverige",
-        en: "Gothenburg, Sweden",
-      },
+      id: "pinchos",
+      title: { sv: "Apputvecklare", en: "App Developer" },
+      company: "Pinchos",
+      timeStart: "2025-09",
+      location: { sv: "Göteborg, Sverige", en: "Gothenburg, Sweden" },
       details: [
         {
-          sv: "Vidareutveckling av app för digital identitetsverifiering (iOS & Android)",
-          en: "Further developed an iOS and Android app for digital identity verification and access to classified workplaces",
+          sv: "Arbetar med utveckling och vidareutveckling av Pinchos appar för iOS och Android.",
+          en: "Work on the development and improvement of the Pinchos iOS and Android apps.",
         },
         {
-          sv: "Fortsatt utveckling av appen Hundvänligt",
-          en: "Continued development of Hundvänligt (iOS & Android)",
+          sv: "Bidrar till löpande förbättringar av funktionalitet, prestanda och användarupplevelse.",
+          en: "Contribute to continuous improvements in functionality, performance, and user experience.",
+        },
+      ],
+      image: "/companies/Pinchos.png",
+    },
+    {
+      id: "ostling-it",
+      title: { sv: "Apputvecklare", en: "App Developer" },
+      company: "Östling IT",
+      timeStart: "2025-01",
+      timeEnd: "2025-09",
+      location: { sv: "Göteborg, Sverige", en: "Gothenburg, Sweden" },
+      details: [
+        {
+          sv: "Vidareutveckling av app för digital identitetsverifiering (iOS & Android), med BankID-integration och kryptering.",
+          en: "Further developed an iOS and Android app for digital identity verification and secure workplace access, including BankID and encryption.",
+        },
+        {
+          sv: "Vidareutveckling av Hundvänligt (iOS & Android), en app som listar hundvänliga platser i Sverige.",
+          en: "Continued development of Hundvänligt (iOS & Android), an app that lists dog-friendly places across Sweden.",
+        },
+        {
+          sv: "Fortsatt utveckling av Hackspett, ett digitalt nyckelhanteringssystem för boende med integration till Shelly.",
+          en: "Further developed Hackspett, a digital key management system for residents, integrated with Shelly.",
         },
       ],
       image: "/companies/OstlingIT.png",
     },
     {
-      id: "annevo-2023-2024",
-      title: {
-        sv: "Apputvecklare",
-        en: "App Developer",
-      },
+      id: "annevo",
+      title: { sv: "Apputvecklare", en: "App Developer" },
       company: "Annevo twoday",
       timeStart: "2023-09",
       timeEnd: "2024-12",
-      location: {
-        sv: "Göteborg, Sverige",
-        en: "Gothenburg, Sweden",
-      },
+      location: { sv: "Göteborg, Sverige", en: "Gothenburg, Sweden" },
       details: [
         {
-          sv: "Projekt inom fordons-, utbildnings- och säkerhetsbranschen",
-          en: "Projects in the automotive, education, and security industries",
+          sv: "Utveckling av säkerhetsapp för arbetsplatser med backend-integration, GraphQL och kryptering.",
+          en: "Developed a workplace safety app with backend integration, GraphQL, and encryption.",
         },
         {
-          sv: "Fokus på säkerhet, CarPlay, prestandaoptimering och anpassning",
-          en: "Focus on security, CarPlay integration, customization, and performance optimization",
+          sv: "Vidareutvecklade en automotive-app med CarPlay, SwiftUI och Kotlin Multiplatform Mobile (KMM).",
+          en: "Contributed to an automotive app with CarPlay integration, SwiftUI, and Kotlin Multiplatform Mobile (KMM).",
+        },
+        {
+          sv: "Förbättrade LoopMe, en utbildningsapp, genom att implementera SSO via Microsoft Azure.",
+          en: "Enhanced LoopMe, an education app, by implementing Single Sign-On (SSO) via Microsoft Azure.",
         },
       ],
       image: "/companies/Annevo.png",
     },
     {
-      id: "bokadirekt-2023",
-      title: {
-        sv: "iOS-Utvecklare",
-        en: "iOS Developer",
-      },
+      id: "bokadirekt",
+      title: { sv: "iOS-Utvecklare", en: "iOS Developer" },
       company: "Bokadirekt",
       timeStart: "2023-03",
       timeEnd: "2023-07",
-      location: {
-        sv: "Remote (Stockholm, Sverige)",
-        en: "Remote (Stockholm, Sweden)",
-      },
+      location: { sv: "Remote (Stockholm, Sverige)", en: "Remote (Stockholm, Sweden)" },
       details: [
         {
-          sv: "Redesign av iOS-appen med programmatisk UI",
-          en: "Redesigned core components of the iOS app using programmatic UI",
+          sv: "Vidareutveckling av Bokadirekt-appen för bokning av skönhets- och wellnessbehandlingar.",
+          en: "Further developed Bokadirekt, an app for booking beauty and wellness treatments.",
         },
         {
-          sv: "Förbättrad flexibilitet och prestanda",
-          en: "Improved flexibility, performance, and maintainability",
+          sv: "Redesignade UI-komponenter för högre flexibilitet och prestanda, med fokus på programmatisk UI.",
+          en: "Redesigned UI components for higher flexibility and performance, using programmatic UI.",
+        },
+        {
+          sv: "Arbetade med Firebase, Xcode Cloud, TestFlight och CI/CD-flöden.",
+          en: "Worked with Firebase, Xcode Cloud, TestFlight, and CI/CD workflows.",
         },
       ],
       image: "/companies/Bokadirekt.png",
     },
     {
-      id: "knowit-2019-2023",
-      title: {
-        sv: "Apputvecklare",
-        en: "App Developer",
-      },
+      id: "knowit",
+      title: { sv: "Apputvecklare", en: "App Developer" },
       company: "Knowit",
       timeStart: "2019-08",
       timeEnd: "2023-02",
-      location: {
-        sv: "Göteborg, Sverige",
-        en: "Gothenburg, Sweden",
-      },
+      location: { sv: "Göteborg, Sverige", en: "Gothenburg, Sweden" },
       details: [
         {
-          sv: "iOS- och Androidutveckling inom transport, hälsa och industri",
-          en: "Developed and maintained iOS and Android apps in transport, health, and industrial sectors",
+          sv: "Förbättrade Västtrafik To Go (iOS) med VoiceOver, dynamisk text och färgkontrast för ökad tillgänglighet.",
+          en: "Improved Västtrafik To Go (iOS) with VoiceOver, dynamic text, and color contrast for better accessibility.",
         },
         {
-          sv: "Ansvar för tillgänglighet, API-optimering och UI/UX",
-          en: "Led accessibility improvements, optimized APIs and UI/UX, managed data workflows",
+          sv: "Ansvarade för vidareutveckling av SKF Bearing Assist (iOS) för att digitalisera arbetet vid lagermonteringar.",
+          en: "Responsible for further development of SKF Bearing Assist (iOS) to digitalize workflows in bearing installations.",
+        },
+        {
+          sv: "Bidrog till Hälsometern (Region Stockholm) genom att implementera en Covid-19-enkät samt funktioner för dataexport.",
+          en: "Contributed to Hälsometern (Region Stockholm) by implementing a Covid-19 survey and features for data export.",
+        },
+        {
+          sv: "Byggde Stressgäris, en stödapp med medlemsverifiering via Facebook och API-integration.",
+          en: "Built Stressgäris, a support app with Facebook membership verification and API integration.",
+        },
+        {
+          sv: "Utvecklade stora delar av Luna Group appen inom industri och bygg, inklusive EAN-scanning, Firebase-loggning och stöd för dark mode.",
+          en: "Developed large parts of the Luna Group app in the industrial and construction sector, including EAN scanning, Firebase logging, and dark mode support.",
         },
       ],
       image: "/companies/Knowit.png",

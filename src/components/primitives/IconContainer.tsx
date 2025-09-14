@@ -1,17 +1,17 @@
 "use client";
-
 import Image from "next/image";
-import { useState } from "react";
-import { TintableIcon } from "./TintableIcon";
+import { useState, type CSSProperties } from "react";
+import { TintableIcon } from "@/components/primitives/TintableIcon";
 
 type Props = {
   image?: string | null;
   imageFallback: string;
   size?: number;
+  radius?: CSSProperties["borderRadius"];
   className?: string;
 };
 
-export function IconContainer({ image, imageFallback, size = 19, className }: Props) {
+export function IconContainer({ image, imageFallback, size = 19, radius = "10%", className }: Props) {
   const [error, setError] = useState(false);
   const showPlaceholder = !image || error;
 
@@ -25,6 +25,8 @@ export function IconContainer({ image, imageFallback, size = 19, className }: Pr
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: showPlaceholder ? "var(--icon-background)" : "transparent",
+        borderRadius: radius,
+        overflow: "hidden",
       }}
     >
       {showPlaceholder ? (
@@ -36,7 +38,7 @@ export function IconContainer({ image, imageFallback, size = 19, className }: Pr
           aria-hidden="true"
           width={size}
           height={size}
-          style={{ objectFit: "contain", display: "block" }}
+          style={{ objectFit: "cover", display: "block" }}
           onError={() => setError(true)}
         />
       )}

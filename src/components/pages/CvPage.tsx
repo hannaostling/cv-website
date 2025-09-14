@@ -18,7 +18,7 @@ import { RecommendationSection } from "../recommendations/RecommendationSection"
 import { SkillSection } from "../skills/SkillSection";
 
 const COLLECTION = "persons";
-const DOC_ID = "hanna-ostling";
+const DOC_ID = "hanna";
 const FADE_IN_DURATION = 1;
 
 export default function CvPage() {
