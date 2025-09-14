@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./Recommendations.module.css";
+import styles from "./RecommendationSection.module.css";
 import { useRef, useState } from "react";
 import type { Recommendation } from "@/data/schema";
 import { useClampDetection } from "@/hooks/useClampDetection";
@@ -8,7 +8,7 @@ import { useTranslated, useTranslatedData } from "@/i18n/useTranslated";
 import { useYearMonthDay } from "@/lib/date";
 import { GridRow } from "./GridRow";
 
-export function RecommendationItem({ rec }: { rec: Recommendation }) {
+export function RecommendationRow({ rec }: { rec: Recommendation }) {
   const [isOpen, setIsOpen] = useState(false);
   const pRef = useRef<HTMLParagraphElement>(null);
   const langCode = useTranslated("languageCode");

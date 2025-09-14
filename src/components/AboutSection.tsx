@@ -1,13 +1,14 @@
 "use client";
 
 import type { Profile } from "@/data/schema";
-import styles from "./About.module.css";
-import { Section } from "./Section";
+import styles from "./AboutSection.module.css";
+
 import { LinkIcon } from "@/icons/LinkIcon";
 import { HomeIcon } from "@/icons/HomeIcon";
 import { MailIcon } from "@/icons/MailIcon";
 import { useTranslatedData } from "@/i18n/useTranslated";
 import { useState, useMemo } from "react";
+import { Section } from "./Section";
 
 type Props = { profile: Profile };
 

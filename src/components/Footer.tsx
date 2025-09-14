@@ -1,9 +1,9 @@
 "use client";
 
 import { useId, useRef, useState } from "react";
-import { ExportButton } from "@/components/ExportButton";
 import { GlobeIcon } from "@/icons/GlobeIcon";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { ExportIcon } from "@/icons/ExportIcon";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useCloseOnOutsideClick } from "@/hooks/useCloseOnOutsideClick";
 import { useTranslated } from "@/i18n/useTranslated";
 import styles from "./Footer.module.css";
@@ -52,8 +52,12 @@ export default function Footer() {
             <LanguageSwitcher />
           </div>
 
-          <ExportButton />
+          <button className={`${styles.footerBtn} no-print`} type="button" onClick={() => window.print()}>
+            <ExportIcon />
+            {useTranslated("exportCv")}
+          </button>
         </div>
+
         <div className={styles.copyright}>
           <span>© Östling IT {new Date().getFullYear()}</span>
         </div>

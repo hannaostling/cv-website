@@ -1,18 +1,18 @@
 "use client";
 
 import styles from "./EntryHeader.module.css";
-import type { Course } from "@/data/schema";
 import { Section } from "./Section";
+import type { Course } from "@/data/schema";
 import { useTranslated } from "@/i18n/useTranslated";
-import { CourseRow } from "@/components/CourseRow";
+import { CourseRow } from "./CourseRow";
 
 type Props = { courses: Course[] };
 
 export function CourseSection({ courses }: Props) {
-  if (!courses || courses.length === 0) return null;
-
   const heading = useTranslated("certificates");
-  const sorted = sortCourses(courses);
+  const sorted = sortCourses(courses ?? []);
+
+  if (!courses || courses.length === 0) return null;
 
   return (
     <Section type="primary-no-seperator" id="certificates" ariaHeading="certificates-heading">

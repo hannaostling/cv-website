@@ -1,8 +1,8 @@
 "use client";
 
-import styles from "./Recommendations.module.css";
+import styles from "./RecommendationSection.module.css";
 import type { Recommendation } from "@/data/schema";
-import { RecommendationItem } from "@/components/RecommendationItem";
+import { RecommendationRow } from "@/components/RecommendationRow";
 import { Section } from "./Section";
 import { useTranslated } from "@/i18n/useTranslated";
 
@@ -19,7 +19,7 @@ export function RecommendationSection({ recommendations }: Props) {
 
       <div className={styles.recommendationsGrid}>
         {recommendations.map((rec) => (
-          <RecommendationItem key={rec.id} rec={rec} />
+          <RecommendationRow key={rec.id} rec={rec} />
         ))}
       </div>
     </Section>

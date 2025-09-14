@@ -3,7 +3,7 @@
 import type { Skill } from "@/data/schema";
 import { useTranslatedData } from "@/i18n/useTranslated";
 
-export function SkillItem({ skill }: { skill: Skill }) {
+export function SkillRow({ skill }: { skill: Skill }) {
   const trData = useTranslatedData();
   const hideOnPrint = skill.hideOnPrint ?? false;
 

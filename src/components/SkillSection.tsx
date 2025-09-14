@@ -1,7 +1,7 @@
 "use client";
 
 import type { Skill } from "@/data/schema";
-import { SkillItem } from "@/components/SkillItem";
+import { SkillRow } from "@/components/SkillRow";
 import { Section } from "./Section";
 import { useTranslated } from "@/i18n/useTranslated";
 
@@ -17,7 +17,7 @@ export function SkillSection({ skills }: Props) {
       <h2 id="skills-heading">{heading}</h2>
       <div className="skills-grid">
         {skills.map((skill) => (
-          <SkillItem key={skill.id} skill={skill} />
+          <SkillRow key={skill.id} skill={skill} />
         ))}
       </div>
     </Section>

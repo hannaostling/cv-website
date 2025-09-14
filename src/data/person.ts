@@ -31,7 +31,6 @@ export const hanna: Person = {
       },
       company: "Östling IT",
       timeStart: "2025-01",
-      timeEnd: null,
       location: {
         sv: "Göteborg, Sverige",
         en: "Gothenburg, Sweden",
@@ -133,7 +132,6 @@ export const hanna: Person = {
       },
       school: "Funka Academy",
       timeStart: "2025-09",
-      timeEnd: null,
       location: {
         sv: "Distans",
         en: "Remote",
