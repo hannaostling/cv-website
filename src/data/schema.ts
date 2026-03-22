@@ -81,6 +81,7 @@ export interface Course {
   description?: Translated;
   image?: string;
   certificate?: string;
+  link?: string;
 }
 
 /**

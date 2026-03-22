@@ -14,6 +14,7 @@ export function CourseRow({ course }: { course: Course }) {
   const formatYM = useYearMonthDay();
   const issuedStr = course.timeEnd ? `${issued} ${formatYM(course.timeEnd)}` : ongoing;
   const imageFallback = "/icons/Certificate.svg";
+  const credentialUrl = course.certificate || course.link;
 
   return (
     <article>
@@ -25,9 +26,9 @@ export function CourseRow({ course }: { course: Course }) {
         imageFallback={imageFallback}
       ></GridRow>
 
-      {course.certificate && (
+      {credentialUrl && (
         <a
-          href={course.certificate}
+          href={credentialUrl}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.button}
