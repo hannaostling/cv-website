@@ -25,5 +25,8 @@
   "certificate": "Certifikat",
   "certificates": "Certifikat",
   "other": "Övrigt",
-  "showCredential": "Visa legitimering"
+  "showCredential": "Visa legitimering",
+  "notFound": "Sidan hittades inte",
+  "notFoundDescription": "Sidan du letade efter finns inte.",
+  "backToHome": "Tillbaka till startsidan"
 }
